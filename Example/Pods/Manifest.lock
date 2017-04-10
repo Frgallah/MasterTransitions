@@ -1,0 +1,16 @@
+PODS:
+  - MasterTransitions (0.1.0)
+
+DEPENDENCIES:
+  - MasterTransitions (from `../`)
+
+EXTERNAL SOURCES:
+  MasterTransitions:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MasterTransitions: 84536e30eb0df74f0e8f8a831f03c92019992e12
+
+PODFILE CHECKSUM: 15ac9eac0ebf2a3ac34f6e14e77aa2269c0f049c
+
+COCOAPODS: 1.2.0

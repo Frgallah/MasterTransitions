@@ -1,0 +1,6 @@
+framework module MasterTransitions {
+  umbrella header "MasterTransitions-umbrella.h"
+
+  export *
+  module * { export * }
+}
