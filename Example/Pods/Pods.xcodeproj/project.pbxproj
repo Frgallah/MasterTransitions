@@ -16,28 +16,7 @@
 		8533638021B10A69EA909EB7C322D139 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		99813A61B817C23AAF422C13D4D50345 /* Pods-MasterTransitions_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22C1AF42CDA139199CCE123F129E1652 /* Pods-MasterTransitions_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3F26AEC382CE50CE02392EE4A86F809 /* MasterTransitions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E7AF13504B96B5E8A771F625AF574C /* MasterTransitions-dummy.m */; };
-		F43CDDD01EA26167009BA3E9 /* MTModalControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDCF1EA26167009BA3E9 /* MTModalControllerDelegate.swift */; };
-		F43CDDD31EA26177009BA3E9 /* MTNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDD11EA26177009BA3E9 /* MTNavigationControllerDelegate.swift */; };
-		F43CDDD41EA26177009BA3E9 /* MTTabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDD21EA26177009BA3E9 /* MTTabBarControllerDelegate.swift */; };
-		F43CDDD61EA2618F009BA3E9 /* MTAnimatedInteractiveTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDD51EA2618F009BA3E9 /* MTAnimatedInteractiveTransitioning.swift */; };
-		F43CDDDA1EA261A6009BA3E9 /* MTLayerPropertyAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDD71EA261A6009BA3E9 /* MTLayerPropertyAnimator.swift */; };
-		F43CDDDB1EA261A6009BA3E9 /* MTTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDD81EA261A6009BA3E9 /* MTTransitionAnimator.swift */; };
-		F43CDDDC1EA261A6009BA3E9 /* MTTransitionLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDD91EA261A6009BA3E9 /* MTTransitionLoader.swift */; };
-		F43CDDEC1EA261C6009BA3E9 /* MTBlindsTransition1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDDD1EA261C6009BA3E9 /* MTBlindsTransition1.swift */; };
-		F43CDDED1EA261C6009BA3E9 /* MTBlindsTransition2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDDE1EA261C6009BA3E9 /* MTBlindsTransition2.swift */; };
-		F43CDDEE1EA261C6009BA3E9 /* MTBookTransition1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDDF1EA261C6009BA3E9 /* MTBookTransition1.swift */; };
-		F43CDDEF1EA261C6009BA3E9 /* MTCubeTransition1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDE01EA261C6009BA3E9 /* MTCubeTransition1.swift */; };
-		F43CDDF01EA261C6009BA3E9 /* MTCubeTransition2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDE11EA261C6009BA3E9 /* MTCubeTransition2.swift */; };
-		F43CDDF11EA261C6009BA3E9 /* MTCubeTransition3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDE21EA261C6009BA3E9 /* MTCubeTransition3.swift */; };
-		F43CDDF21EA261C6009BA3E9 /* MTDoorTransition2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDE31EA261C6009BA3E9 /* MTDoorTransition2.swift */; };
-		F43CDDF31EA261C6009BA3E9 /* MTDoorTransition3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDE41EA261C6009BA3E9 /* MTDoorTransition3.swift */; };
-		F43CDDF41EA261C6009BA3E9 /* MTDoorTransition4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDE51EA261C6009BA3E9 /* MTDoorTransition4.swift */; };
-		F43CDDF51EA261C6009BA3E9 /* MTDoorTransition5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDE61EA261C6009BA3E9 /* MTDoorTransition5.swift */; };
-		F43CDDF61EA261C6009BA3E9 /* MTFolderTransition1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDE71EA261C6009BA3E9 /* MTFolderTransition1.swift */; };
-		F43CDDF71EA261C6009BA3E9 /* MTPullTransition1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDE81EA261C6009BA3E9 /* MTPullTransition1.swift */; };
-		F43CDDF81EA261C6009BA3E9 /* MTPushTransition2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDE91EA261C6009BA3E9 /* MTPushTransition2.swift */; };
-		F43CDDF91EA261C6009BA3E9 /* MTPuzzleTransition1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDEA1EA261C6009BA3E9 /* MTPuzzleTransition1.swift */; };
-		F43CDDFA1EA261C6009BA3E9 /* MTSwingDoorTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43CDDEB1EA261C6009BA3E9 /* MTSwingDoorTransition.swift */; };
+		F4757F881EA430DF0029A0EE /* MTModalControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4757F871EA430DF0029A0EE /* MTModalControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,29 +60,7 @@
 		D49C80C17FFC331A4BA4D460139B3F10 /* MasterTransitions-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MasterTransitions-prefix.pch"; sourceTree = "<group>"; };
 		DBD451A9F45EED117566FCA736925839 /* Pods-MasterTransitions_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MasterTransitions_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		E566BD0794D425380DD35B834E7E7614 /* Pods-MasterTransitions_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MasterTransitions_Example.modulemap"; sourceTree = "<group>"; };
-		F43CDDCF1EA26167009BA3E9 /* MTModalControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTModalControllerDelegate.swift; path = ../Sources/MTControllerDelegates/MTModalControllerDelegate.swift; sourceTree = "<group>"; };
-		F43CDDD11EA26177009BA3E9 /* MTNavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTNavigationControllerDelegate.swift; path = ../Sources/MTControllerDelegates/MTNavigationControllerDelegate.swift; sourceTree = "<group>"; };
-		F43CDDD21EA26177009BA3E9 /* MTTabBarControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTTabBarControllerDelegate.swift; path = ../Sources/MTControllerDelegates/MTTabBarControllerDelegate.swift; sourceTree = "<group>"; };
-		F43CDDD51EA2618F009BA3E9 /* MTAnimatedInteractiveTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTAnimatedInteractiveTransitioning.swift; path = ../Sources/MTInteractiveTransitioning/MTAnimatedInteractiveTransitioning.swift; sourceTree = "<group>"; };
-		F43CDDD71EA261A6009BA3E9 /* MTLayerPropertyAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTLayerPropertyAnimator.swift; path = ../Sources/MTTransitionsMain/MTLayerPropertyAnimator.swift; sourceTree = "<group>"; };
-		F43CDDD81EA261A6009BA3E9 /* MTTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTTransitionAnimator.swift; path = ../Sources/MTTransitionsMain/MTTransitionAnimator.swift; sourceTree = "<group>"; };
-		F43CDDD91EA261A6009BA3E9 /* MTTransitionLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTTransitionLoader.swift; path = ../Sources/MTTransitionsMain/MTTransitionLoader.swift; sourceTree = "<group>"; };
-		F43CDDDD1EA261C6009BA3E9 /* MTBlindsTransition1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTBlindsTransition1.swift; path = ../Sources/MTTransitions/MTBlindsTransition1.swift; sourceTree = "<group>"; };
-		F43CDDDE1EA261C6009BA3E9 /* MTBlindsTransition2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTBlindsTransition2.swift; path = ../Sources/MTTransitions/MTBlindsTransition2.swift; sourceTree = "<group>"; };
-		F43CDDDF1EA261C6009BA3E9 /* MTBookTransition1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTBookTransition1.swift; path = ../Sources/MTTransitions/MTBookTransition1.swift; sourceTree = "<group>"; };
-		F43CDDE01EA261C6009BA3E9 /* MTCubeTransition1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTCubeTransition1.swift; path = ../Sources/MTTransitions/MTCubeTransition1.swift; sourceTree = "<group>"; };
-		F43CDDE11EA261C6009BA3E9 /* MTCubeTransition2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTCubeTransition2.swift; path = ../Sources/MTTransitions/MTCubeTransition2.swift; sourceTree = "<group>"; };
-		F43CDDE21EA261C6009BA3E9 /* MTCubeTransition3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTCubeTransition3.swift; path = ../Sources/MTTransitions/MTCubeTransition3.swift; sourceTree = "<group>"; };
-		F43CDDE31EA261C6009BA3E9 /* MTDoorTransition2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTDoorTransition2.swift; path = ../Sources/MTTransitions/MTDoorTransition2.swift; sourceTree = "<group>"; };
-		F43CDDE41EA261C6009BA3E9 /* MTDoorTransition3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTDoorTransition3.swift; path = ../Sources/MTTransitions/MTDoorTransition3.swift; sourceTree = "<group>"; };
-		F43CDDE51EA261C6009BA3E9 /* MTDoorTransition4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTDoorTransition4.swift; path = ../Sources/MTTransitions/MTDoorTransition4.swift; sourceTree = "<group>"; };
-		F43CDDE61EA261C6009BA3E9 /* MTDoorTransition5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTDoorTransition5.swift; path = ../Sources/MTTransitions/MTDoorTransition5.swift; sourceTree = "<group>"; };
-		F43CDDE71EA261C6009BA3E9 /* MTFolderTransition1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTFolderTransition1.swift; path = ../Sources/MTTransitions/MTFolderTransition1.swift; sourceTree = "<group>"; };
-		F43CDDE81EA261C6009BA3E9 /* MTPullTransition1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTPullTransition1.swift; path = ../Sources/MTTransitions/MTPullTransition1.swift; sourceTree = "<group>"; };
-		F43CDDE91EA261C6009BA3E9 /* MTPushTransition2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTPushTransition2.swift; path = ../Sources/MTTransitions/MTPushTransition2.swift; sourceTree = "<group>"; };
-		F43CDDEA1EA261C6009BA3E9 /* MTPuzzleTransition1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTPuzzleTransition1.swift; path = ../Sources/MTTransitions/MTPuzzleTransition1.swift; sourceTree = "<group>"; };
-		F43CDDEB1EA261C6009BA3E9 /* MTSwingDoorTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTSwingDoorTransition.swift; path = ../Sources/MTTransitions/MTSwingDoorTransition.swift; sourceTree = "<group>"; };
-		F43CDDFB1EA261F7009BA3E9 /* MTHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MTHeader.png; path = ../Resources/MTHeader.png; sourceTree = "<group>"; };
+		F4757F871EA430DF0029A0EE /* MTModalControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTModalControllerDelegate.swift; path = ../Sources/MTControllerDelegates/MTModalControllerDelegate.swift; sourceTree = "<group>"; };
 		F595DD51541801B0A9DEE9471992CB48 /* Pods-MasterTransitions_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MasterTransitions_Tests-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -265,9 +222,7 @@
 		F43CDD981E9BC49C009BA3E9 /* MTControllerDelegates */ = {
 			isa = PBXGroup;
 			children = (
-				F43CDDD11EA26177009BA3E9 /* MTNavigationControllerDelegate.swift */,
-				F43CDDD21EA26177009BA3E9 /* MTTabBarControllerDelegate.swift */,
-				F43CDDCF1EA26167009BA3E9 /* MTModalControllerDelegate.swift */,
+				F4757F871EA430DF0029A0EE /* MTModalControllerDelegate.swift */,
 			);
 			name = MTControllerDelegates;
 			sourceTree = "<group>";
@@ -275,9 +230,6 @@
 		F43CDD991E9D2BC2009BA3E9 /* MTTransitionsMain */ = {
 			isa = PBXGroup;
 			children = (
-				F43CDDD71EA261A6009BA3E9 /* MTLayerPropertyAnimator.swift */,
-				F43CDDD81EA261A6009BA3E9 /* MTTransitionAnimator.swift */,
-				F43CDDD91EA261A6009BA3E9 /* MTTransitionLoader.swift */,
 			);
 			name = MTTransitionsMain;
 			sourceTree = "<group>";
@@ -285,7 +237,6 @@
 		F43CDD9A1E9D2D82009BA3E9 /* MTInteractiveTransitioning */ = {
 			isa = PBXGroup;
 			children = (
-				F43CDDD51EA2618F009BA3E9 /* MTAnimatedInteractiveTransitioning.swift */,
 			);
 			name = MTInteractiveTransitioning;
 			sourceTree = "<group>";
@@ -293,21 +244,6 @@
 		F43CDD9B1E9D329F009BA3E9 /* MTTransitions */ = {
 			isa = PBXGroup;
 			children = (
-				F43CDDDD1EA261C6009BA3E9 /* MTBlindsTransition1.swift */,
-				F43CDDDE1EA261C6009BA3E9 /* MTBlindsTransition2.swift */,
-				F43CDDDF1EA261C6009BA3E9 /* MTBookTransition1.swift */,
-				F43CDDE01EA261C6009BA3E9 /* MTCubeTransition1.swift */,
-				F43CDDE11EA261C6009BA3E9 /* MTCubeTransition2.swift */,
-				F43CDDE21EA261C6009BA3E9 /* MTCubeTransition3.swift */,
-				F43CDDE31EA261C6009BA3E9 /* MTDoorTransition2.swift */,
-				F43CDDE41EA261C6009BA3E9 /* MTDoorTransition3.swift */,
-				F43CDDE51EA261C6009BA3E9 /* MTDoorTransition4.swift */,
-				F43CDDE61EA261C6009BA3E9 /* MTDoorTransition5.swift */,
-				F43CDDE71EA261C6009BA3E9 /* MTFolderTransition1.swift */,
-				F43CDDE81EA261C6009BA3E9 /* MTPullTransition1.swift */,
-				F43CDDE91EA261C6009BA3E9 /* MTPushTransition2.swift */,
-				F43CDDEA1EA261C6009BA3E9 /* MTPuzzleTransition1.swift */,
-				F43CDDEB1EA261C6009BA3E9 /* MTSwingDoorTransition.swift */,
 			);
 			name = MTTransitions;
 			sourceTree = "<group>";
@@ -315,7 +251,6 @@
 		F43CDDCD1EA25B0B009BA3E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F43CDDFB1EA261F7009BA3E9 /* MTHeader.png */,
 			);
 			name = Resources;
 			path = MasterTransitions;
@@ -441,29 +376,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F43CDDF01EA261C6009BA3E9 /* MTCubeTransition2.swift in Sources */,
-				F43CDDD61EA2618F009BA3E9 /* MTAnimatedInteractiveTransitioning.swift in Sources */,
-				F43CDDFA1EA261C6009BA3E9 /* MTSwingDoorTransition.swift in Sources */,
-				F43CDDDB1EA261A6009BA3E9 /* MTTransitionAnimator.swift in Sources */,
-				F43CDDF61EA261C6009BA3E9 /* MTFolderTransition1.swift in Sources */,
-				F43CDDF51EA261C6009BA3E9 /* MTDoorTransition5.swift in Sources */,
-				F43CDDF21EA261C6009BA3E9 /* MTDoorTransition2.swift in Sources */,
-				F43CDDD31EA26177009BA3E9 /* MTNavigationControllerDelegate.swift in Sources */,
-				F43CDDF81EA261C6009BA3E9 /* MTPushTransition2.swift in Sources */,
-				F43CDDF31EA261C6009BA3E9 /* MTDoorTransition3.swift in Sources */,
-				F43CDDEE1EA261C6009BA3E9 /* MTBookTransition1.swift in Sources */,
-				F43CDDDA1EA261A6009BA3E9 /* MTLayerPropertyAnimator.swift in Sources */,
-				F43CDDF91EA261C6009BA3E9 /* MTPuzzleTransition1.swift in Sources */,
-				F43CDDDC1EA261A6009BA3E9 /* MTTransitionLoader.swift in Sources */,
 				D3F26AEC382CE50CE02392EE4A86F809 /* MasterTransitions-dummy.m in Sources */,
-				F43CDDD01EA26167009BA3E9 /* MTModalControllerDelegate.swift in Sources */,
-				F43CDDEC1EA261C6009BA3E9 /* MTBlindsTransition1.swift in Sources */,
-				F43CDDF41EA261C6009BA3E9 /* MTDoorTransition4.swift in Sources */,
-				F43CDDED1EA261C6009BA3E9 /* MTBlindsTransition2.swift in Sources */,
-				F43CDDF71EA261C6009BA3E9 /* MTPullTransition1.swift in Sources */,
-				F43CDDEF1EA261C6009BA3E9 /* MTCubeTransition1.swift in Sources */,
-				F43CDDF11EA261C6009BA3E9 /* MTCubeTransition3.swift in Sources */,
-				F43CDDD41EA26177009BA3E9 /* MTTabBarControllerDelegate.swift in Sources */,
+				F4757F881EA430DF0029A0EE /* MTModalControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
