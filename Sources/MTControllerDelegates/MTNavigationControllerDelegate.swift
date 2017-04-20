@@ -23,7 +23,7 @@ public class MTNavigationControllerDelegate: NSObject {
     /**
      Navigation view controller.
      */
-    @IBOutlet weak var navigationController:UINavigationController? {
+    @IBOutlet public weak var navigationController:UINavigationController? {
         didSet {
             objc_setAssociatedObject(navigationController, UnsafeRawPointer.init(MTNavigationControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             navigationController?.delegate = self
@@ -39,7 +39,7 @@ public class MTNavigationControllerDelegate: NSObject {
     /**
      Transition Type (enum), default value is set to Push2.
      */
-    @IBInspectable var type: UInt = 0 {
+    @IBInspectable public var type: UInt = 0 {
         willSet(newType) {
             if newType < UInt(MTTransitionType.Max.rawValue) {
                 transitionType = MTTransitionType(rawValue: Int(newType))!
@@ -51,7 +51,7 @@ public class MTNavigationControllerDelegate: NSObject {
     /**
      Transition subType (enum) as transition direction, default value is set to direction left to right for Pop operation and right to left for Push operation.
      */
-    @IBInspectable var subType: UInt = 0 {
+    @IBInspectable public var subType: UInt = 0 {
         willSet(newSubType) {
             if newSubType < UInt(MTTransitionSubType.Max.rawValue) {
                 transitionSubType = MTTransitionSubType(rawValue: Int(newSubType))!
@@ -64,12 +64,12 @@ public class MTNavigationControllerDelegate: NSObject {
     /**
      Transition duration (in seconds), default value is set to 2 seconds.
      */
-    @IBInspectable var duration: Double = 2.0
+    @IBInspectable public var duration: Double = 2.0
     
     /**
      If is Interactive is true it will  make the transition interactive by adding pan gesture to navigation controller view.
      */
-    @IBInspectable var isInteractive: Bool = false {
+    @IBInspectable public var isInteractive: Bool = false {
         willSet(newIsInteractive) {
             if navigationController != nil {
                 if newIsInteractive {
@@ -86,22 +86,24 @@ public class MTNavigationControllerDelegate: NSObject {
      */
     @IBInspectable var gesturePopDirection:MTGestureDirection = .LeftToRight
     
-    var transitionType:MTTransitionType = .Push2
+    public var transitionType:MTTransitionType = .Push2
     var oppsiteSubType: MTTransitionSubType = .LeftToRight
-    var transitionSubType:MTTransitionSubType = .RightToLeft {
+    public var transitionSubType:MTTransitionSubType = .RightToLeft {
         willSet(newTransitionSubType) {
             oppsiteSubType = oppsiteTransition(subType: newTransitionSubType)
         }
     }
     
+    public var transitionBackgroundColor: UIColor = UIColor.black
+    
     fileprivate var panGestureRecognizer: UIPanGestureRecognizer?
     fileprivate var navigationOperation: UINavigationControllerOperation = .none
     
-    override init() {
+    public override init() {
         super.init()
     }
     
-    init(navigationController: UINavigationController, transitionType: MTTransitionType, isInteractive: Bool) {
+    public init(navigationController: UINavigationController, transitionType: MTTransitionType, isInteractive: Bool) {
         
         self.transitionType = transitionType
         self.isInteractive = isInteractive
@@ -261,7 +263,7 @@ extension MTNavigationControllerDelegate : UINavigationControllerDelegate {
             subType = oppsiteTransition(subType: transitionSubType)
         }
         
-        return MTAnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: subType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil)
+        return MTAnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: subType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
   
     }
     

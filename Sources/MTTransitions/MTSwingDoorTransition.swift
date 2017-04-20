@@ -114,7 +114,7 @@ class MTSwingDoorTransition: MTLayerTransitionAnimator {
         
         let animator: MTLayerPropertyAnimator = MTLayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
             
-            self.effectView.contentView.backgroundColor = UIColor.clear
+            self.transitionView?.backgroundColor = self.backgroundColor
             
             layer1.add(fromLayerRotationAnimation, forKey: nil)
             layer2.add(toLayerRotationAnimation, forKey: nil)
@@ -123,9 +123,12 @@ class MTSwingDoorTransition: MTLayerTransitionAnimator {
         
         animator.addCompletion({ [unowned self] (position) in
             
-            self.effectView.removeFromSuperview()
+            let completed = position == .end
+            if !completed {
+                self.secondView?.removeFromSuperview()
+            }
+            self.transitionView?.removeFromSuperview()
             if self.transitionCompletion != nil {
-                let completed = position == .end
                 self.transitionCompletion!(completed)
             }
             

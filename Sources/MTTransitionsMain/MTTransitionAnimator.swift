@@ -16,51 +16,6 @@
 import UIKit
 
 
-enum MTTransitionCategory: Int {
-    
-    case View
-    case Layer
-    case CoreImage
-    case SceneKit
-    
-}
-
-
-enum MTTransitionType: Int {
-    
-    case Push2  //0
-    case Pull1 //1
-    case SwingDoor //2
-    case Door2 //3
-    case Door3 //4
-    case Door4 //5
-    case Door5 //6
-    case Folder1 //7
-    case Book1 //8
-    case Cube1 //9
-    case Cube2 //10
-    case Cube3 //11
-    case Blinds1 //12
-    case Blinds2 //13
-    case Puzzle1 //14
-    case Max
-}
-
-enum MTTransitionSubType: Int {
-    
-    case RightToLeft
-    case LeftToRight
-    case BottomToTop
-    case TopToBottom
-    case Horizontal
-    case Vertical
-    case HorizontalOpposite
-    case VerticalOpposite
-    case Max
-    
-}
-
-
 class MTTransitionAnimator: NSObject {
     
     var propertyAnimator: UIViewPropertyAnimator?
@@ -69,8 +24,8 @@ class MTTransitionAnimator: NSObject {
     var midDuration: CGFloat = 0.5
     var transitionCategory: MTTransitionCategory = .View
     fileprivate(set) var defaultDuration = 1.0;
-    lazy var effectView: UIVisualEffectView = UIVisualEffectView.init(effect: UIBlurEffect.init(style: UIBlurEffectStyle.light))
-    
+    var backgroundColor: UIColor = UIColor.black
+
     var transitionCompletion: ((Bool) -> ())?
     
     var transitionUpdated: (() -> ())?
@@ -153,6 +108,7 @@ class MTLayerTransitionAnimator: MTTransitionAnimator {
     
     private var isReversed: Bool = false
     private var fraction: CGFloat = 0
+    var transitionView: UIView?
     var secondView: UIView?
     
     override var fractionComplete: CGFloat {
@@ -189,10 +145,13 @@ class MTLayerTransitionAnimator: MTTransitionAnimator {
             toViewSnapshot = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
         }
-        effectView.frame = containerView.frame
-        containerView.addSubview(effectView)
-        let transitionContainer = UIView.init(frame: effectView.bounds)
-        effectView.contentView.addSubview(transitionContainer)
+        let transitionView = UIView.init(frame: containerView.bounds)
+        transitionView.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        containerView.addSubview(transitionView)
+        let transitionContainer = UIView.init(frame: containerView.bounds)
+        // transitionContainer.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        transitionView.addSubview(transitionContainer)
+        self.transitionView = transitionView
         var t = CATransform3DIdentity
         t.m34 = -1.0/(transitionContainer.bounds.size.height * 2.0)
         transitionContainer.layer.transform = t

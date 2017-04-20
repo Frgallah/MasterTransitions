@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import MasterTransitions
 
 class TabBarFirstViewController: UIViewController {
 
+    var transitionType: MTTransitionType = .Push2    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        
+        guard let tabBarController = self.tabBarController else {
+            return
+        }
+        
+        let tabBarControllerDelegate = MTTabBarControllerDelegate.init(tabBarController: tabBarController, transitionType: transitionType, isInteractive: true)
+        tabBarControllerDelegate.duration = 2
+        tabBarControllerDelegate.transitionSubType = .LeftToRight
+        tabBarControllerDelegate.transitionBackgroundColor = .black
+   
     }
 
     override func didReceiveMemoryWarning() {

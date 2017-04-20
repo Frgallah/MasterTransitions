@@ -24,7 +24,7 @@ class MTDoorTransition3: MTLayerTransitionAnimator {
         fromView.frame = fromViewFrame
         toView.frame = toViewFrame
         containerView.addSubview(toView)
-        
+        secondView = toView        
         UIGraphicsBeginImageContextWithOptions(fromView.bounds.size, true, (containerView.window?.screen.scale)!)
         fromView.drawHierarchy(in: fromView.bounds, afterScreenUpdates: false)
         fromViewSnapshot = UIGraphicsGetImageFromCurrentImageContext()
@@ -35,10 +35,14 @@ class MTDoorTransition3: MTLayerTransitionAnimator {
             toViewSnapshot = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
         }
-        effectView.frame = containerView.frame
-        containerView.addSubview(effectView)
-        let transitionContainer = UIView.init(frame: effectView.bounds)
-        effectView.contentView.addSubview(transitionContainer)
+        
+        let transitionView = UIView.init(frame: containerView.bounds)
+        transitionView.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        containerView.addSubview(transitionView)
+        let transitionContainer = UIView.init(frame: containerView.bounds)
+        // transitionContainer.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        transitionView.addSubview(transitionContainer)
+        self.transitionView = transitionView
         var t = CATransform3DIdentity
         t.m34 = -1.0/(transitionContainer.bounds.size.height * 2.0)
         transitionContainer.layer.transform = t
@@ -213,7 +217,7 @@ class MTDoorTransition3: MTLayerTransitionAnimator {
         
         let animator: MTLayerPropertyAnimator = MTLayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
             
-            self.effectView.contentView.backgroundColor = UIColor.clear
+            self.transitionView?.backgroundColor = self.backgroundColor
             mainLayer.add(mainLayerTranslateAnimation, forKey: nil)
             frontLayer1.add(frontLayerRotationAnimation1, forKey: nil)
             frontLayer2.add(frontLayerRotationAnimation2, forKey: nil)
@@ -226,7 +230,7 @@ class MTDoorTransition3: MTLayerTransitionAnimator {
             if !completed {
                 self.secondView?.removeFromSuperview()
             }
-            self.effectView.removeFromSuperview()
+            self.transitionView?.removeFromSuperview()
             if self.transitionCompletion != nil {
                 self.transitionCompletion!(completed)
             }

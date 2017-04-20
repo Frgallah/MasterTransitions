@@ -31,7 +31,7 @@ public class MTModalControllerDelegate: NSObject {
     /**
      Pan gesture for interactive dismissal.
      */
-    @IBOutlet weak var panGestureForDismissal: UIPanGestureRecognizer? {
+    @IBOutlet public weak var panGestureForDismissal: UIPanGestureRecognizer? {
         didSet {
             panGestureForDismissal?.addTarget(self, action: #selector(panGestureForDismissalDidPan(_:)))
         }
@@ -45,7 +45,7 @@ public class MTModalControllerDelegate: NSObject {
     /**
      Destination view controller.
      */
-    @IBOutlet weak var destinationController:UIViewController? {
+    @IBOutlet public weak var destinationController:UIViewController? {
         didSet {
             objc_setAssociatedObject(destinationController, UnsafeRawPointer.init(MTModalControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             destinationController?.transitioningDelegate = self
@@ -57,7 +57,7 @@ public class MTModalControllerDelegate: NSObject {
     /**
      Transition Type (enum), default value is set to Push2.
      */
-    @IBInspectable var type: UInt = 0 {
+    @IBInspectable public var type: UInt = 0 {
         willSet(newType) {
             if newType < UInt(MTTransitionType.Max.rawValue) {
                 transitionType = MTTransitionType(rawValue: Int(newType))!
@@ -70,7 +70,7 @@ public class MTModalControllerDelegate: NSObject {
     /**
      Transition subType (enum) as transition direction, default value is set to direction left to right for Dismissal and right to left for Presentation.
      */
-    @IBInspectable var subType: UInt = 0 {
+    @IBInspectable public var subType: UInt = 0 {
         willSet(newSubType) {
             if newSubType < UInt(MTTransitionSubType.Max.rawValue) {
                 transitionSubType = MTTransitionSubType(rawValue: Int(newSubType))!
@@ -90,24 +90,27 @@ public class MTModalControllerDelegate: NSObject {
     /**
      Transition duration (in seconds), default value is set to 2 seconds.
      */
-    @IBInspectable var duration: Double = 2
+    @IBInspectable public var duration: Double = 2
     
-    var transitionType: MTTransitionType = .Push2
+    public var transitionType: MTTransitionType = .Push2
     var oppsiteSubType: MTTransitionSubType = .LeftToRight
-    var transitionSubType: MTTransitionSubType = .RightToLeft {
+    public var transitionSubType: MTTransitionSubType = .RightToLeft {
         willSet(newTransitionSubType) {
             oppsiteSubType = oppsiteTransition(subType: newTransitionSubType)
         }
     }
     
-    override init() {
+    public var transitionBackgroundColor: UIColor = UIColor.black
+    
+    
+    public override init() {
         
         super.init()
         
     }
     
     
-    init(destinationController:UIViewController,transitionType: MTTransitionType) {
+    public init(destinationController:UIViewController,transitionType: MTTransitionType) {
         self.destinationController = destinationController
         self.transitionType = transitionType
         super.init()
@@ -135,7 +138,7 @@ public class MTModalControllerDelegate: NSObject {
         
     }
     
-    func addInteractiveToDestinationController(panGesture: UIPanGestureRecognizer?) {
+    public func addInteractiveToDestinationController(panGesture: UIPanGestureRecognizer?) {
         var gesture = panGesture
         if gesture == nil {
             gesture = UIPanGestureRecognizer()
@@ -292,13 +295,13 @@ extension MTModalControllerDelegate : UIViewControllerTransitioningDelegate {
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return MTAnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: transitionSubType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil)
+        return MTAnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: transitionSubType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
         
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return MTAnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: oppsiteSubType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil)
+        return MTAnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: oppsiteSubType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
     }
     
     public func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {

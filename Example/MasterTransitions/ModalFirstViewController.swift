@@ -7,13 +7,26 @@
 //
 
 import UIKit
+import MasterTransitions
+
 
 class ModalFirstViewController: UIViewController {
 
+    var transitionType: MTTransitionType = .Push2    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.navigationController?.isNavigationBarHidden = true
+        
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        
+        let _ = self.navigationController?.popViewController(animated: true)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +35,20 @@ class ModalFirstViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toMSVC" {
+            let destinationController = segue.destination
+            destinationController.modalPresentationStyle = .fullScreen
+            let controllerDelegate = MTModalControllerDelegate.init(destinationController: destinationController, transitionType: transitionType)
+            controllerDelegate.addInteractiveToDestinationController(panGesture: nil)
+            controllerDelegate.duration = 2
+            controllerDelegate.transitionSubType = .RightToLeft
+            controllerDelegate.transitionBackgroundColor = .black
+        
+        }
+   
     }
-    */
+  
 
 }

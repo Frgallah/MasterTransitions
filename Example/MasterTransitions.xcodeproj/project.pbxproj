@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0089DF5EDCDB05DD23447CAD /* Pods_MasterTransitions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B31898BE59076F737959204 /* Pods_MasterTransitions_Example.framework */; };
-		286D6C7990185510FAC9380B /* Pods_MasterTransitions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F56F431BA2D2EDB0311A55 /* Pods_MasterTransitions_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		F408F85E1EA7D74300046CFA /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F408F85D1EA7D74300046CFA /* CustomButtonStyle.swift */; };
+		F48F24EB1EA4510B00EFBE66 /* MasterTransitions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48F24E51EA44E9A00EFBE66 /* MasterTransitions.framework */; };
+		F48F24F11EA4554400EFBE66 /* Pods_MasterTransitions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48F24F01EA4554400EFBE66 /* Pods_MasterTransitions_Example.framework */; };
+		F48F24F31EA556E800EFBE66 /* NavigationFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F24F21EA556E800EFBE66 /* NavigationFirstViewController.swift */; };
+		F48F24F51EA5570E00EFBE66 /* NavigationSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F24F41EA5570E00EFBE66 /* NavigationSecondViewController.swift */; };
+		F48F24F71EA5572B00EFBE66 /* TabBarFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F24F61EA5572B00EFBE66 /* TabBarFirstViewController.swift */; };
+		F48F24F91EA5574200EFBE66 /* TabBarSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F24F81EA5574200EFBE66 /* TabBarSecondViewController.swift */; };
+		F48F24FB1EA5575E00EFBE66 /* TabBarThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F24FA1EA5575E00EFBE66 /* TabBarThirdViewController.swift */; };
+		F48F24FD1EA5577A00EFBE66 /* ModalFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F24FC1EA5577A00EFBE66 /* ModalFirstViewController.swift */; };
+		F48F24FF1EA557A000EFBE66 /* ModalSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F24FE1EA557A000EFBE66 /* ModalSecondViewController.swift */; };
+		F48F25011EA55D7600EFBE66 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F25001EA55D7600EFBE66 /* HomeViewController.swift */; };
+		F48F25031EA560DA00EFBE66 /* TransitionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F25021EA560DA00EFBE66 /* TransitionsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,16 +38,13 @@
 
 /* Begin PBXFileReference section */
 		0F4DF35BDD8E05DD7A6319DD /* Pods-MasterTransitions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterTransitions_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MasterTransitions_Tests/Pods-MasterTransitions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		17F56F431BA2D2EDB0311A55 /* Pods_MasterTransitions_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterTransitions_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		363721F71BD6642274EF5A8D /* Pods-MasterTransitions_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterTransitions_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MasterTransitions_Example/Pods-MasterTransitions_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3E1FF61C72DADFEB263F1F11 /* Pods-MasterTransitions_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterTransitions_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MasterTransitions_Example/Pods-MasterTransitions_Example.release.xcconfig"; sourceTree = "<group>"; };
-		4B31898BE59076F737959204 /* Pods_MasterTransitions_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasterTransitions_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D3CF140A5F1C3A8604A74FC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		5F37917D3EAE76CC30BAD39F /* MasterTransitions.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MasterTransitions.podspec; path = ../MasterTransitions.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MasterTransitions_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterTransitions_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -47,6 +53,18 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		B13DC0BE3075DA153826E8D3 /* Pods-MasterTransitions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterTransitions_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MasterTransitions_Tests/Pods-MasterTransitions_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F3DD604E6C2305BE6E52EA60 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F408F85D1EA7D74300046CFA /* CustomButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		F48F24E51EA44E9A00EFBE66 /* MasterTransitions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MasterTransitions.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MasterTransitions-hdlgjdxujkoahrhgnsmudhpqqikp/Build/Products/Debug-iphoneos/MasterTransitions/MasterTransitions.framework"; sourceTree = "<group>"; };
+		F48F24F01EA4554400EFBE66 /* Pods_MasterTransitions_Example.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_MasterTransitions_Example.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MasterTransitions-hdlgjdxujkoahrhgnsmudhpqqikp/Build/Products/Debug-iphoneos/Pods_MasterTransitions_Example.framework"; sourceTree = "<group>"; };
+		F48F24F21EA556E800EFBE66 /* NavigationFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationFirstViewController.swift; sourceTree = "<group>"; };
+		F48F24F41EA5570E00EFBE66 /* NavigationSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationSecondViewController.swift; sourceTree = "<group>"; };
+		F48F24F61EA5572B00EFBE66 /* TabBarFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarFirstViewController.swift; sourceTree = "<group>"; };
+		F48F24F81EA5574200EFBE66 /* TabBarSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarSecondViewController.swift; sourceTree = "<group>"; };
+		F48F24FA1EA5575E00EFBE66 /* TabBarThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarThirdViewController.swift; sourceTree = "<group>"; };
+		F48F24FC1EA5577A00EFBE66 /* ModalFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalFirstViewController.swift; sourceTree = "<group>"; };
+		F48F24FE1EA557A000EFBE66 /* ModalSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalSecondViewController.swift; sourceTree = "<group>"; };
+		F48F25001EA55D7600EFBE66 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F48F25021EA560DA00EFBE66 /* TransitionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0089DF5EDCDB05DD23447CAD /* Pods_MasterTransitions_Example.framework in Frameworks */,
+				F48F24F11EA4554400EFBE66 /* Pods_MasterTransitions_Example.framework in Frameworks */,
+				F48F24EB1EA4510B00EFBE66 /* MasterTransitions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				286D6C7990185510FAC9380B /* Pods_MasterTransitions_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +112,16 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				F48F25001EA55D7600EFBE66 /* HomeViewController.swift */,
+				F48F25021EA560DA00EFBE66 /* TransitionsTableViewController.swift */,
+				F48F24F21EA556E800EFBE66 /* NavigationFirstViewController.swift */,
+				F48F24F41EA5570E00EFBE66 /* NavigationSecondViewController.swift */,
+				F48F24F61EA5572B00EFBE66 /* TabBarFirstViewController.swift */,
+				F48F24F81EA5574200EFBE66 /* TabBarSecondViewController.swift */,
+				F48F24FA1EA5575E00EFBE66 /* TabBarThirdViewController.swift */,
+				F48F24FC1EA5577A00EFBE66 /* ModalFirstViewController.swift */,
+				F48F24FE1EA557A000EFBE66 /* ModalSecondViewController.swift */,
+				F408F85D1EA7D74300046CFA /* CustomButtonStyle.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -142,8 +169,8 @@
 		811032C24BF59E1420DE0AA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4B31898BE59076F737959204 /* Pods_MasterTransitions_Example.framework */,
-				17F56F431BA2D2EDB0311A55 /* Pods_MasterTransitions_Tests.framework */,
+				F48F24F01EA4554400EFBE66 /* Pods_MasterTransitions_Example.framework */,
+				F48F24E51EA44E9A00EFBE66 /* MasterTransitions.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,11 +242,13 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 5U7L76AQE3;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 5U7L76AQE3;
 						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -362,8 +391,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				F48F24FD1EA5577A00EFBE66 /* ModalFirstViewController.swift in Sources */,
+				F48F24FB1EA5575E00EFBE66 /* TabBarThirdViewController.swift in Sources */,
+				F48F25031EA560DA00EFBE66 /* TransitionsTableViewController.swift in Sources */,
+				F48F24F91EA5574200EFBE66 /* TabBarSecondViewController.swift in Sources */,
+				F48F24FF1EA557A000EFBE66 /* ModalSecondViewController.swift in Sources */,
+				F408F85E1EA7D74300046CFA /* CustomButtonStyle.swift in Sources */,
+				F48F25011EA55D7600EFBE66 /* HomeViewController.swift in Sources */,
+				F48F24F31EA556E800EFBE66 /* NavigationFirstViewController.swift in Sources */,
+				F48F24F71EA5572B00EFBE66 /* TabBarFirstViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				F48F24F51EA5570E00EFBE66 /* NavigationSecondViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -484,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -498,7 +536,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5U7L76AQE3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos/MasterTransitions",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = MasterTransitions/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -515,7 +559,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5U7L76AQE3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos/MasterTransitions",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = MasterTransitions/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -530,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0F4DF35BDD8E05DD7A6319DD /* Pods-MasterTransitions_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 5U7L76AQE3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -550,6 +601,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B13DC0BE3075DA153826E8D3 /* Pods-MasterTransitions_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 5U7L76AQE3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

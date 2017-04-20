@@ -14,8 +14,14 @@ class NavigationSecondViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.navigationController?.isNavigationBarHidden = true        
     }
 
+    @IBAction func back(_ sender: Any) {
+        let _ = self.navigationController?.popViewController(animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

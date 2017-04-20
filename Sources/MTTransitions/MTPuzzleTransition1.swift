@@ -147,7 +147,7 @@ class MTPuzzleTransition1: MTTransitionAnimator {
             if !completed {
                 toView.removeFromSuperview()
             }
-            self.effectView.removeFromSuperview()
+            transitionContainer.removeFromSuperview()
             if self.transitionCompletion != nil {
                 self.transitionCompletion!(completed)
             }

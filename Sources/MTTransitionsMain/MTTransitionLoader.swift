@@ -15,13 +15,58 @@
 
 import UIKit
 
+enum MTTransitionCategory: Int {
+    
+    case View
+    case Layer
+    case CoreImage
+    case SceneKit
+    
+}
+
+
+public enum MTTransitionType: Int {
+    
+    case Push2  //0
+    case Pull1 //1
+    case SwingDoor //2
+    case Door2 //3
+    case Door3 //4
+    case Door4 //5
+    case Door5 //6
+    case Folder1 //7
+    case Book1 //8
+    case Cube1 //9
+    case Cube2 //10
+    case Cube3 //11
+    case Blinds1 //12
+    case Blinds2 //13
+    case Puzzle1 //14
+    case Max
+}
+
+public enum MTTransitionSubType: Int {
+    
+    case RightToLeft
+    case LeftToRight
+    case BottomToTop
+    case TopToBottom
+    case Horizontal
+    case Vertical
+    case HorizontalOpposite
+    case VerticalOpposite
+    case Max
+    
+}
+
+
 class MTTransitionLoader: NSObject {
     
     class func transitionForType(transitionType: MTTransitionType, transitionSubType:MTTransitionSubType) -> MTTransitionAnimator! {
-        if transitionType == .Pull1 {
-            return MTPullTransition1(transitionSubType: transitionSubType)
-        } else if transitionType == .Push2 {
+        if transitionType == .Push2 {
             return MTPushTransition2(transitionSubType: transitionSubType)
+        }else if transitionType == .Pull1 {
+            return MTPullTransition1(transitionSubType: transitionSubType)
         } else if transitionType == .SwingDoor {
             return MTSwingDoorTransition(transitionSubType: transitionSubType)
         } else if transitionType == .Door2 {
@@ -48,8 +93,10 @@ class MTTransitionLoader: NSObject {
             return MTBlindsTransition2(transitionSubType: transitionSubType)
         } else if transitionType == .Puzzle1 {
             return MTPuzzleTransition1(transitionSubType: transitionSubType)
+        } else if transitionType == .Max {
+            return MTPuzzleTransition1(transitionSubType: transitionSubType)
         } else {
-            return MTTransitionAnimator(transitionSubType: transitionSubType)
+            return MTPushTransition2(transitionSubType: transitionSubType)
         }
         
     }

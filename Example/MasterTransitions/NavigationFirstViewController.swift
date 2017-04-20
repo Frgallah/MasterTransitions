@@ -7,15 +7,35 @@
 //
 
 import UIKit
+import MasterTransitions
 
 class NavigationFirstViewController: UIViewController {
 
+    var transitionType: MTTransitionType = .Push2    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.navigationController?.isNavigationBarHidden = true        
+        
+        guard let navigationController = self.navigationController else {
+            return
+        }
+        let navigationControllerDelegate = MTNavigationControllerDelegate.init(navigationController: navigationController, transitionType: transitionType, isInteractive: true)
+        navigationControllerDelegate.duration = 2
+        navigationControllerDelegate.transitionSubType = .TopToBottom
+        navigationControllerDelegate.transitionBackgroundColor = .black
+        
     }
 
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.delegate = nil        
+        let _ = self.navigationController?.popViewController(animated: true)
+        
+    }
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

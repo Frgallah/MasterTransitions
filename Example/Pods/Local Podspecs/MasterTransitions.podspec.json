@@ -1,22 +1,23 @@
 {
   "name": "MasterTransitions",
   "version": "0.1.0",
-  "summary": "A short description of MasterTransitions.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "Interactive transition library for tabbar, navigation and modal view controller. iOS only.",
+  "description": "TODO: Interactive transition library for tabbar, navigation and modal view controller. By using a few lines of code you can get an elegant transition.",
   "homepage": "https://github.com/frgallah/MasterTransitions",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "frgallah": "frgallah@outlook.com"
+    "Mohammed Frgallah": "frgallah@outlook.com"
   },
   "source": {
     "git": "https://github.com/frgallah/MasterTransitions.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "source_files": "MasterTransitions/Classes/**/*"
+  "source_files": "Sources/**/*.swift",
+  "frameworks": "UIKit"
 }

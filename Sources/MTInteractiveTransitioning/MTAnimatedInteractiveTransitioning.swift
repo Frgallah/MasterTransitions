@@ -36,16 +36,25 @@ class MTAnimatedInteractiveTransitioning: NSObject {
             initiallyInteractive = true
         }
     }
+    var transitionBackgroundColor: UIColor = UIColor.black {
+        willSet {
+            transition.backgroundColor = newValue
+        }
+    }
     var gestureDirection: MTGestureDirection?
     fileprivate var context: UIViewControllerContextTransitioning?
     var transition: MTTransitionAnimator!
     fileprivate var initialTranslation =  CGPoint.zero
     private var lastPercentage: CGFloat = 0
     
-    init(transitionType: MTTransitionType,  transitionSubType:MTTransitionSubType, duration:TimeInterval, panGestureRecognizer:UIPanGestureRecognizer?, gestureDirection:MTGestureDirection?) {
+    init(transitionType: MTTransitionType,  transitionSubType:MTTransitionSubType, duration:TimeInterval, panGestureRecognizer:UIPanGestureRecognizer?, gestureDirection:MTGestureDirection?, backgroundColor: UIColor?) {
         self.transitionType = transitionType
         self.transitionSubType = transitionSubType
         self.gestureDirection = gestureDirection;
+        if let color = backgroundColor {
+            self.transitionBackgroundColor = color
+        }
+        
         
         super.init()
         transition = MTTransitionLoader.transitionForType(transitionType: transitionType, transitionSubType: transitionSubType)
@@ -184,9 +193,59 @@ extension MTAnimatedInteractiveTransitioning : UIViewControllerAnimatedTransitio
     }
     
     func interruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning) -> UIViewImplicitlyAnimating {
+        if transition.propertyAnimator != nil {
+            return transition.propertyAnimator!
+        } else {
+            return interruptibleAnimator(using: transitionContext, transitionCompletion: {
+                (completed) in
+                transitionContext.completeTransition(completed)
+            })
         
-        return transition.propertyAnimator!
+        }
         
+    }
+    
+    func interruptibleAnimator(using transitionContext: UIViewControllerContextTransitioning, transitionCompletion: @escaping (Bool) -> ()) -> UIViewImplicitlyAnimating {
+        
+        let fromViewController = transitionContext.viewController(forKey: .from)
+        let toViewController = transitionContext.viewController(forKey: .to)
+        let containerView = transitionContext.containerView
+        var fromView: UIView!
+        var toView: UIView!
+        
+        if transitionContext.responds(to:#selector(transitionContext.view(forKey:))) {
+            fromView = transitionContext.view(forKey: .from)
+            toView = transitionContext.view(forKey: .to)
+        } else {
+            fromView = fromViewController?.view
+            toView = toViewController?.view
+        }
+        
+        let fromViewFrame = transitionContext.initialFrame(for: fromViewController!)
+        let toViewFrame = transitionContext.finalFrame(for: toViewController!)
+        fromView.frame = fromViewFrame
+        toView.frame = toViewFrame
+        containerView.addSubview(toView)
+        toView.alpha = 0
+        
+        let animator: UIViewPropertyAnimator = UIViewPropertyAnimator.init(duration: duration, curve: .linear, animations: {
+            
+            fromView.alpha = 0
+            toView.alpha = 1
+            
+        })
+        
+        animator.addCompletion({ (position) in
+            
+            let completed = position == .end
+            transitionCompletion(completed)
+            
+        })
+        
+        animator.isUserInteractionEnabled = false
+        
+        return animator
+    
     }
     
     
@@ -200,9 +259,7 @@ extension MTAnimatedInteractiveTransitioning : UIViewControllerInteractiveTransi
         initialTranslation = (panGestureRecognizer?.translation(in: transitionContext.containerView))!
         transition.isInteractive = true
         transition.setupTranisition(transitionContext: transitionContext, transitionCompletion: { (completed) in
-            if completed {
             transitionContext.completeTransition(completed)
-            }
         })
    
     }

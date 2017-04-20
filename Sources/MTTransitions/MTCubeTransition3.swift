@@ -24,10 +24,16 @@ class MTCubeTransition3: MTLayerTransitionAnimator {
         fromView.frame = fromViewFrame
         toView.frame = toViewFrame
         containerView.addSubview(toView)
-        effectView.frame = containerView.frame
-        containerView.addSubview(effectView)
-        let transitionContainer = UIView.init(frame: effectView.bounds)
-        effectView.contentView.addSubview(transitionContainer)
+        
+        let transitionView = UIView.init(frame: containerView.bounds)
+        transitionView.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        containerView.addSubview(transitionView)
+        
+        
+        let transitionContainer = UIView.init(frame: containerView.bounds)
+       // transitionContainer.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+        transitionView.addSubview(transitionContainer)
+        
         var t = CATransform3DIdentity
         t.m34 = 1 / -900
         
@@ -258,7 +264,7 @@ class MTCubeTransition3: MTLayerTransitionAnimator {
         
         let animator: MTLayerPropertyAnimator = MTLayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
             
-            self.effectView.contentView.backgroundColor = UIColor.clear
+            transitionView.backgroundColor = self.backgroundColor
             cubeView1.add(positionAnimation1, forKey: nil)
             cubeView2.add(positionAnimation2, forKey: nil)
             cubeView3.add(positionAnimation3, forKey: nil)
@@ -272,7 +278,7 @@ class MTCubeTransition3: MTLayerTransitionAnimator {
             if !completed {
                 toView.removeFromSuperview()
             }
-            self.effectView.removeFromSuperview()
+            transitionView.removeFromSuperview()
             if self.transitionCompletion != nil {
                 self.transitionCompletion!(completed)
             }
