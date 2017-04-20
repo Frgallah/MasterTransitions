@@ -196,8 +196,8 @@
 				764FB771DD1C84E10A910C3F /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
-				607FACCE1AFB9204008FA782 /* Resources */,
 				1973CBA43EEBE80F53134205 /* [CP] Embed Pods Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
 				E22ECE2B39410E6FFEE63BF0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -581,10 +581,7 @@
 			baseConfigurationReference = 0F4DF35BDD8E05DD7A6319DD /* Pods-MasterTransitions_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 5U7L76AQE3;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -602,10 +599,7 @@
 			baseConfigurationReference = B13DC0BE3075DA153826E8D3 /* Pods-MasterTransitions_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 5U7L76AQE3;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
