@@ -2,8 +2,15 @@
 //  AppDelegate.swift
 //  MasterTransitions
 //
-//  Created by frgallah on 04/09/2017.
-//  Copyright (c) 2017 frgallah. All rights reserved.
+//  Created by Frgallah on 4/11/17.
+//
+//  Copyright (c) 2017 Mohammed Frgallah. All rights reserved.
+//
+//  Licensed under the MIT license, can be found at:  https://github.com/Frgallah/MasterTransitions/blob/master/LICENSE  or  https://opensource.org/licenses/MIT
+//
+
+//  For last updated version of this code check the github page at https://github.com/Frgallah/MasterTransitions
+//
 //
 
 import UIKit

@@ -2,8 +2,15 @@
 //  TabBarFirstViewController.swift
 //  MasterTransitions
 //
-//  Created by Home on 4/17/17.
-//  Copyright © 2017 CocoaPods. All rights reserved.
+//  Created by Frgallah on 4/11/17.
+//
+//  Copyright (c) 2017 Mohammed Frgallah. All rights reserved.
+//
+//  Licensed under the MIT license, can be found at:  https://github.com/Frgallah/MasterTransitions/blob/master/LICENSE  or  https://opensource.org/licenses/MIT
+//
+
+//  For last updated version of this code check the github page at https://github.com/Frgallah/MasterTransitions
+//
 //
 
 import UIKit
