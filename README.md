@@ -1,5 +1,5 @@
 <div align="center">
-<img src="MTHeader.png" width="890" alt="Transition"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/507810b2/Documentation/Images/MTHeader.png" width="890" alt="Transition"/>
 </div>
 
 
@@ -45,12 +45,12 @@ How to use MasterTransitions to create a custom transition:
 #### In code
  
 In the root view controller or the first view controller:
-1- Get a reference to your Navigation or TabBar Controller
-2- Create a Navigation or TabBar Controller delegate using Navigation or TabBar Controller, transition type and is Interactive as parameters.
-3- Optional: in your delegate object
+1. Get a reference to your Navigation or TabBar Controller
+2. Create a Navigation or TabBar Controller delegate using Navigation or TabBar Controller, transition type and is Interactive as parameters.
+3. Optional: in your delegate object
    - set the transition duration
    - set the transition direction
-4- Your Done!
+4. Your Done!
 
 Navigation Controller
 ```swift
@@ -92,15 +92,16 @@ tabBarControllerDelegate.transitionSubType = .LeftToRight
 
 #### In Interface Builder
 if you are using the storyboard only:
-1- Drag an Object from the Object Library to your:
-
+1. Drag an Object from the Object Library to your:
 navigation controller scene
+
 
 or
 
 tabBar controller scene
 
-2- In the Custom Class Inspector of the object set its class to:
+
+2. In the Custom Class Inspector of the object set its class to:
 
 MTNavigationControllerDelegate 
 
@@ -108,7 +109,7 @@ or
 
 MTTabBarControllerDelegate
 
-3- control-drag from the delegate object to:
+3. control-drag from the delegate object to:
 
 the navigation controller and set the outlet to navigationController
 
@@ -117,7 +118,7 @@ or
 
 the tabBar controller and set the outlet to tabBarController
 
-4- Optional:
+4. Optional:
    In the Attributes Inspector of the delegate object
      - set the Type as transition type
      - set the Sub Type as transition direction
@@ -129,14 +130,14 @@ the tabBar controller and set the outlet to tabBarController
 #### In code
 
 In the source or presenting view  controller:
-1- Create or get a reference to your destination controller
-2- set the modal Presentation Style of your destination controller to full screen
-3- Create a Modal Controller delegate using the destination controller and a transition type as parameters.
-4- Optional:
+1. Create or get a reference to your destination controller
+2. set the modal Presentation Style of your destination controller to full screen
+3. Create a Modal Controller delegate using the destination controller and a transition type as parameters.
+4. Optional:
 - make the transition interactive
 - set the transition duration
 - set the transition direction
-5- Your Done!
+5. Your Done!
 
 ```swift
 // In the source or presenting view  controller:
@@ -168,23 +169,23 @@ present(destinationController, animated: true, completion: nil)
 ```
 #### In Interface Builder
 if you using the storyboard only:
-1- In the Attributes Inspector of the destination controller set Presentation to Full Screen
-2- Drag an Object from the Object Library to the destination controller scene
+1. In the Attributes Inspector of the destination controller set Presentation to Full Screen
+2. Drag an Object from the Object Library to the destination controller scene
 
-3- In the Custom Class Inspector of the object set its class to MTModalControllerDelegate 
+3. In the Custom Class Inspector of the object set its class to MTModalControllerDelegate 
 
-4- control-drag from the delegate object to the destination controller and set the outlet to destinationController
+4. control-drag from the delegate object to the destination controller and set the outlet to destinationController
 
-5- Optional:
+5. Optional:
 In the Attributes Inspector of the delegate object
 - set the Type as transition type
 - set the Sub Type as transition direction
 - set the Duration as transition durtion
 
-6- Drag a Pan Gesture Recognizer from the Object Library to the destination controller view.
-7- In the Attributes Inspector of the Pan Gesture Recognizer set the Minimum and Maximum Touches to 1
+6. Drag a Pan Gesture Recognizer from the Object Library to the destination controller view.
+7. In the Attributes Inspector of the Pan Gesture Recognizer set the Minimum and Maximum Touches to 1
 
-8- control-drag from the delegate object to the Pan Gesture Recognizer and set the outlet to panGestureForDismissal
+8. control-drag from the delegate object to the Pan Gesture Recognizer and set the outlet to panGestureForDismissal
 
 ## Example
 
