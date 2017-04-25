@@ -6,9 +6,12 @@
 # MasterTransitions
 
 [![CI Status](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/Frgallah/MasterTransitions)
+[![Platform](https://img.shields.io/badge/Platform-iOS-blue.svg)](http://cocoapods.org/pods/MasterTransitions)
+[![Language](https://img.shields.io/badge/Language-Swift%203.0-orange.svg)](http://cocoapods.org/pods/MasterTransitions)
+[![Xcode](https://img.shields.io/badge/Xcode-8.2%2B-blue.svg)](http://cocoapods.org/pods/MasterTransitions)
 [![Version](https://img.shields.io/cocoapods/v/MasterTransitions.svg?style=flat)](http://cocoapods.org/pods/MasterTransitions)
 [![License](https://img.shields.io/dub/l/vibe-d.svg)](http://cocoapods.org/pods/MasterTransitions)
-[![Platform](https://img.shields.io/badge/Platform-iOS-blue.svg)](http://cocoapods.org/pods/MasterTransitions)
+
 
 ## Introduction
 
