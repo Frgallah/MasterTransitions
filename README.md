@@ -95,8 +95,8 @@ if you are using the storyboard only:
 1. Drag an Object from the Object Library to your:
 navigation controller scene
 
-<div align="center">
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/navigationObject.png"/>
 </div>
 
@@ -104,8 +104,8 @@ or
 
 tabBar controller scene
 
-<div align="center">
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabBarObject.png"/>
 </div>
 
@@ -114,6 +114,8 @@ tabBar controller scene
 MTNavigationControllerDelegate 
 
 <div>
+
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/2b463931/Documentation/Images/naviCustomClass.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/navigationDelegate.png"/>
 </div>
 
@@ -122,6 +124,7 @@ or
 MTTabBarControllerDelegate
 
 <div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/2b463931/Documentation/Images/tabCustomClass.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabBarDelegate.png"/>
 </div>
 
@@ -130,7 +133,7 @@ MTTabBarControllerDelegate
 the navigation controller and set the outlet to navigationController
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDrag1.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDrag1.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDrag2.png"/>
 </div>
 
@@ -139,7 +142,7 @@ or
 the tabBar controller and set the outlet to tabBarController
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabDrag1.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabDrag1.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabDrag2.png"/>
 </div>
 
@@ -151,7 +154,7 @@ the tabBar controller and set the outlet to tabBarController
      - set Is Interactive
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDelegateAtt.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDelegateAtt.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabDelegateAtt.png"/>
 </div>
 
@@ -209,21 +212,21 @@ if you using the storyboard only:
 2. Drag an Object from the Object Library to the destination controller scene
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/destinationObject.png"/>
 </div>
 
 3. In the Custom Class Inspector of the object set its class to MTModalControllerDelegate 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDelegateAtt.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/2b463931/Documentation/Images/modalCustomClass.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/destinationDelegate.png"/>
 </div>
 
 4. control-drag from the delegate object to the destination controller and set the outlet to destinationController
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/destinationDrag1.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/destinationDrag1.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/destinationDrag2.png"/>
 </div>
 
@@ -240,7 +243,7 @@ In the Attributes Inspector of the delegate object
 6. Drag a Pan Gesture Recognizer from the Object Library to the destination controller view.
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/panGesture.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/panGesture.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/modalPanGesture.png"/>
 </div>
 
@@ -253,7 +256,7 @@ In the Attributes Inspector of the delegate object
 8. control-drag from the delegate object to the Pan Gesture Recognizer and set the outlet to panGestureForDismissal
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/modalPanDrag1.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/modalPanDrag1.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/modalPanDrag2.png"/>
 </div>
 
