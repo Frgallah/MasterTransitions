@@ -312,7 +312,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/push2.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/push2.gif"  width="100"/>
 </div>
 
 ----------
