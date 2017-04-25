@@ -95,28 +95,53 @@ if you are using the storyboard only:
 1. Drag an Object from the Object Library to your:
 navigation controller scene
 
+<div align="center">
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/navigationObject.png"/>
+</div>
 
 or
 
 tabBar controller scene
 
+<div align="center">
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabBarObject.png"/>
+</div>
 
 2. In the Custom Class Inspector of the object set its class to:
 
 MTNavigationControllerDelegate 
 
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/navigationDelegate.png"/>
+</div>
+
 or
 
 MTTabBarControllerDelegate
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabBarDelegate.png"/>
+</div>
 
 3. control-drag from the delegate object to:
 
 the navigation controller and set the outlet to navigationController
 
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDrag1.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDrag2.png"/>
+</div>
 
 or 
 
 the tabBar controller and set the outlet to tabBarController
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabDrag1.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabDrag2.png"/>
+</div>
 
 4. Optional:
    In the Attributes Inspector of the delegate object
@@ -124,6 +149,12 @@ the tabBar controller and set the outlet to tabBarController
      - set the Sub Type as transition direction
      - set the Duration as transition durtion
      - set Is Interactive
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDelegateAtt.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabDelegateAtt.png"/>
+</div>
+
 
 ### Modal Controller
 
@@ -170,11 +201,31 @@ present(destinationController, animated: true, completion: nil)
 #### In Interface Builder
 if you using the storyboard only:
 1. In the Attributes Inspector of the destination controller set Presentation to Full Screen
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/destinFullScreen.png"/>
+</div>
+
 2. Drag an Object from the Object Library to the destination controller scene
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/destinationObject.png"/>
+</div>
 
 3. In the Custom Class Inspector of the object set its class to MTModalControllerDelegate 
 
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDelegateAtt.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/destinationDelegate.png"/>
+</div>
+
 4. control-drag from the delegate object to the destination controller and set the outlet to destinationController
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/destinationDrag1.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/destinationDrag2.png"/>
+</div>
 
 5. Optional:
 In the Attributes Inspector of the delegate object
@@ -182,10 +233,29 @@ In the Attributes Inspector of the delegate object
 - set the Sub Type as transition direction
 - set the Duration as transition durtion
 
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/modalDelegateAtt.png"/>
+</div>
+
 6. Drag a Pan Gesture Recognizer from the Object Library to the destination controller view.
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/panGesture.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/modalPanGesture.png"/>
+</div>
+
 7. In the Attributes Inspector of the Pan Gesture Recognizer set the Minimum and Maximum Touches to 1
 
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/panMinMax.png"/>
+</div>
+
 8. control-drag from the delegate object to the Pan Gesture Recognizer and set the outlet to panGestureForDismissal
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/modalPanDrag1.png"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/modalPanDrag2.png"/>
+</div>
 
 ## Example
 

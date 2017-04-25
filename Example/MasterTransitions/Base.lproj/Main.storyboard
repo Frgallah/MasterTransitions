@@ -193,6 +193,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srN-2R-Sle" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Zix-dj-cOR" customClass="MTModalControllerDelegate" customModule="MasterTransitions"/>
             </objects>
             <point key="canvasLocation" x="1591" y="-654"/>
         </scene>
