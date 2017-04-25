@@ -53,7 +53,7 @@ public class MTNavigationControllerDelegate: NSObject {
      */
     @IBInspectable public var subType: UInt = 0 {
         willSet(newSubType) {
-            if newSubType < UInt(MTTransitionSubType.Max.rawValue) {
+            if newSubType < UInt(MTTransitionSubType.None.rawValue) {
                 transitionSubType = MTTransitionSubType(rawValue: Int(newSubType))!
             } else {
                 transitionSubType = MTTransitionSubType.RightToLeft

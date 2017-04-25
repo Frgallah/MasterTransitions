@@ -12,6 +12,16 @@
 //  For last updated version of this code check the github page at https://github.com/Frgallah/MasterTransitions
 //
 //
+
+/* Transition's Directions as Transition SubType
+ 
+ RightToLeft
+ LeftToRight
+ BottomToTop
+ TopToBottom
+ 
+ */
+
 import UIKit
 
 class MTSwingDoorTransition: MTLayerTransitionAnimator {

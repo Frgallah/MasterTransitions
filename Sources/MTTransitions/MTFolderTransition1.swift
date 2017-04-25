@@ -13,6 +13,14 @@
 //
 //
 
+/* Transition's Directions as Transition SubType
+ 
+ Horizontal
+ Vertical
+ 
+ */
+
+
 import UIKit
 
 class MTFolderTransition1: MTLayerTransitionAnimator {

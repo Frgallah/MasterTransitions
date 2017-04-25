@@ -13,6 +13,16 @@
 //
 //
 
+/* Transition's Directions as Transition SubType
+ 
+ RightToLeft
+ LeftToRight
+ BottomToTop
+ TopToBottom
+ 
+ */
+
+
 import UIKit
 
 class MTDoorTransition3: MTLayerTransitionAnimator {

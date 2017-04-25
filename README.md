@@ -297,6 +297,337 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 frgallah, frgallah@outlook.com
 
+## Transitions
+
+### Available Transitions
+
+1. Push 2
+
+**Transition's Directions as Transition SubType**
+
+> RightToLeft
+> LeftToRight
+> BottomToTop
+> TopToBottom
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/push2.gif"/>
+</div>
+
+----------
+
+2. Pull 1
+
+**Transition's Directions as Transition SubType**
+
+> RightToLeft
+> LeftToRight
+> BottomToTop
+> TopToBottom
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/pull1.gif"/>
+</div>
+
+----------
+
+3. Swing Door
+
+**Transition's Directions as Transition SubType**
+
+> RightToLeft
+> LeftToRight
+> BottomToTop
+> TopToBottom
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/swingDoor.gif"/>
+</div>
+
+----------
+
+4. Door 2
+
+**Transition's Directions as Transition SubType**
+
+> Horizontal
+> Vertical
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door2.gif"/>
+</div>
+
+----------
+
+5. Door 3
+
+**Transition's Directions as Transition SubType**
+
+> RightToLeft
+> LeftToRight
+> BottomToTop
+> TopToBottom
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door3.gif"/>
+</div>
+
+----------
+
+6. Door 4
+
+**Transition's Directions as Transition SubType**
+
+> Horizontal
+> Vertical
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door4.gif"/>
+</div>
+
+----------
+
+7. Door 5
+
+**Transition's Directions as Transition SubType**
+
+> Horizontal
+> Vertical
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door5.gif"/>
+</div>
+
+----------
+
+8. Folder 1
+
+**Transition's Directions as Transition SubType**
+
+> Horizontal
+> Vertical
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/folder1.gif"/>
+</div>
+
+----------
+
+9. Book 1
+
+**Transition's Directions as Transition SubType**
+
+> RightToLeft
+> LeftToRight
+> BottomToTop
+> TopToBottom
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/book1.gif"/>
+</div>
+
+----------
+
+10. Cube 1
+
+**Transition's Directions as Transition SubType**
+
+> RightToLeft
+> LeftToRight
+> BottomToTop
+> TopToBottom
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/cube1.gif"/>
+</div>
+
+----------
+
+11. Cube 2
+
+**Transition's Directions as Transition SubType**
+
+> RightToLeft
+> LeftToRight
+> BottomToTop
+> TopToBottom
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/cube2.gif"/>
+</div>
+
+----------
+
+12. Cube 3
+
+**Transition's Directions as Transition SubType**
+
+> RightToLeft
+> LeftToRight
+> BottomToTop
+> TopToBottom
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/cube3.gif"/>
+</div>
+
+----------
+
+13. Blinds 1
+
+**Transition's Directions as Transition SubType**
+
+> RightToLeft
+> LeftToRight
+> BottomToTop
+> TopToBottom
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/blinds1.gif"/>
+</div>
+
+----------
+
+14. Blinds 2
+
+**Transition's Directions as Transition SubType**
+
+> RightToLeft
+> LeftToRight
+> BottomToTop
+> TopToBottom
+
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/blinds2.gif"/>
+</div>
+
+----------
+
+15. Puzzle 1
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/puzzle1.gif"/>
+</div>
+
+----------
+
+### Coming soon
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more1.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more2.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more3.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more4.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more5.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more6.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more7.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more8.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more9.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more10.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more11.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more12.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more13.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more14.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more15.gif"/>
+</div>
+
+----------
+
+<div>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more16.gif"/>
+</div>
+
+----------
+
+
 ## License
 
 MasterTransitions is available under the MIT license. See the LICENSE file for more info.
+
+
+
+

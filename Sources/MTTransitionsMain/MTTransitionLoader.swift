@@ -55,7 +55,7 @@ public enum MTTransitionSubType: Int {
     case Vertical
     case HorizontalOpposite
     case VerticalOpposite
-    case Max
+    case None
     
 }
 
