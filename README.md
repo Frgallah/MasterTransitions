@@ -5,7 +5,7 @@
 
 # MasterTransitions
 
-[![CI Status](http://img.shields.io/travis/frgallah/MasterTransitions.svg?style=flat)](https://travis-ci.org/frgallah/MasterTransitions)
+[![CI Status](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/Frgallah/MasterTransitions)
 [![Version](https://img.shields.io/cocoapods/v/MasterTransitions.svg?style=flat)](http://cocoapods.org/pods/MasterTransitions)
 [![License](https://img.shields.io/cocoapods/l/MasterTransitions.svg?style=flat)](http://cocoapods.org/pods/MasterTransitions)
 [![Platform](https://img.shields.io/cocoapods/p/MasterTransitions.svg?style=flat)](http://cocoapods.org/pods/MasterTransitions)
