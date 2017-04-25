@@ -98,70 +98,58 @@ if you are using the storyboard only:
 
 navigation controller scene
 
----
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/navigationObject.png"/>
 </div>
----
 
 or
 
 tabBar controller scene
 
----
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/object.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabBarObject.png"/>
 </div>
----
 
 
 2. In the Custom Class Inspector of the object set its class to:
 
 MTNavigationControllerDelegate 
 
----
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/2b463931/Documentation/Images/naviCustomClass.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/navigationDelegate.png"/>
 </div>
----
 
 or
 
 MTTabBarControllerDelegate
 
----
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/2b463931/Documentation/Images/tabCustomClass.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabBarDelegate.png"/>
 </div>
----
 
 
 3. control-drag from the delegate object to:
 
 the navigation controller and set the outlet to navigationController
 
----
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDrag1.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDrag2.png"/>
 </div>
----
 
 
 or 
 
 the tabBar controller and set the outlet to tabBarController
 
----
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabDrag1.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabDrag2.png"/>
 </div>
----
 
 
 4. Optional:
@@ -171,12 +159,10 @@ the tabBar controller and set the outlet to tabBarController
      - set the Duration as transition durtion
      - set Is Interactive
 
----
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/naviDelegateAtt.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/713d5e96/Documentation/Images/tabDelegateAtt.png"/>
 </div>
----
 
 
 ### Modal Controller
@@ -222,7 +208,9 @@ present(destinationController, animated: true, completion: nil)
 }
 ```
 #### In Interface Builder
+
 if you using the storyboard only:
+
 1. In the Attributes Inspector of the destination controller set Presentation to Full Screen
 
 <div>
