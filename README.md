@@ -301,14 +301,14 @@ frgallah, frgallah@outlook.com
 
 ### Available Transitions
 
-1. Push 2
+**1. Push 2**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> RightToLeft
-> LeftToRight
-> BottomToTop
-> TopToBottom
+> - RightToLeft
+> - LeftToRight
+> - BottomToTop
+> - TopToBottom
 
 
 <div>
@@ -317,14 +317,14 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-2. Pull 1
+**2. Pull 1**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> RightToLeft
-> LeftToRight
-> BottomToTop
-> TopToBottom
+> - RightToLeft
+> - LeftToRight
+> - BottomToTop
+> - TopToBottom
 
 
 <div>
@@ -333,14 +333,14 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-3. Swing Door
+**3. Swing Door**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> RightToLeft
-> LeftToRight
-> BottomToTop
-> TopToBottom
+> - RightToLeft
+> - LeftToRight
+> - BottomToTop
+> - TopToBottom
 
 
 <div>
@@ -349,12 +349,12 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-4. Door 2
+**4. Door 2**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> Horizontal
-> Vertical
+> - Horizontal
+> - Vertical
 
 
 <div>
@@ -363,14 +363,14 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-5. Door 3
+**5. Door 3**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> RightToLeft
-> LeftToRight
-> BottomToTop
-> TopToBottom
+> - RightToLeft
+> - LeftToRight
+> - BottomToTop
+> - TopToBottom
 
 
 <div>
@@ -379,12 +379,12 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-6. Door 4
+**6. Door 4**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> Horizontal
-> Vertical
+> - Horizontal
+> - Vertical
 
 
 <div>
@@ -393,12 +393,12 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-7. Door 5
+**7. Door 5**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> Horizontal
-> Vertical
+> - Horizontal
+> - Vertical
 
 
 <div>
@@ -407,12 +407,12 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-8. Folder 1
+**8. Folder 1**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> Horizontal
-> Vertical
+> - Horizontal
+> - Vertical
 
 
 <div>
@@ -421,14 +421,14 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-9. Book 1
+**9. Book 1**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> RightToLeft
-> LeftToRight
-> BottomToTop
-> TopToBottom
+> - RightToLeft
+> - LeftToRight
+> - BottomToTop
+> - TopToBottom
 
 
 <div>
@@ -437,14 +437,14 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-10. Cube 1
+**10. Cube 1**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> RightToLeft
-> LeftToRight
-> BottomToTop
-> TopToBottom
+> - RightToLeft
+> - LeftToRight
+> - BottomToTop
+> - TopToBottom
 
 
 <div>
@@ -453,14 +453,14 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-11. Cube 2
+**11. Cube 2**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> RightToLeft
-> LeftToRight
-> BottomToTop
-> TopToBottom
+> - RightToLeft
+> - LeftToRight
+> - BottomToTop
+> - TopToBottom
 
 
 <div>
@@ -469,14 +469,14 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-12. Cube 3
+**12. Cube 3**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> RightToLeft
-> LeftToRight
-> BottomToTop
-> TopToBottom
+> - RightToLeft
+> - LeftToRight
+> - BottomToTop
+> - TopToBottom
 
 
 <div>
@@ -485,14 +485,14 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-13. Blinds 1
+**13. Blinds 1**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> RightToLeft
-> LeftToRight
-> BottomToTop
-> TopToBottom
+> - RightToLeft
+> - LeftToRight
+> - BottomToTop
+> - TopToBottom
 
 
 <div>
@@ -501,14 +501,14 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-14. Blinds 2
+**14. Blinds 2**
 
-**Transition's Directions as Transition SubType**
+Transition's Directions as Transition SubType
 
-> RightToLeft
-> LeftToRight
-> BottomToTop
-> TopToBottom
+> - RightToLeft
+> - LeftToRight
+> - BottomToTop
+> - TopToBottom
 
 
 <div>
@@ -517,7 +517,7 @@ frgallah, frgallah@outlook.com
 
 ----------
 
-15. Puzzle 1
+**15. Puzzle 1**
 
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/puzzle1.gif" width="200"/>
