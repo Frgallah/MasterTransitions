@@ -312,7 +312,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/push2.gif"  width="100"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/push2.gif"  width="200"/>
 </div>
 
 ----------
@@ -328,7 +328,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/pull1.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/pull1.gif" width="200"/>
 </div>
 
 ----------
@@ -344,7 +344,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/swingDoor.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/swingDoor.gif" width="200"/>
 </div>
 
 ----------
@@ -358,7 +358,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door2.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door2.gif" width="200"/>
 </div>
 
 ----------
@@ -374,7 +374,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door3.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door3.gif" width="200"/>
 </div>
 
 ----------
@@ -388,7 +388,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door4.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door4.gif" width="200"/>
 </div>
 
 ----------
@@ -402,7 +402,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door5.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/door5.gif" width="200"/>
 </div>
 
 ----------
@@ -416,7 +416,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/folder1.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/folder1.gif" width="200"/>
 </div>
 
 ----------
@@ -432,7 +432,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/book1.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/book1.gif" width="200"/>
 </div>
 
 ----------
@@ -448,7 +448,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/cube1.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/cube1.gif" width="200"/>
 </div>
 
 ----------
@@ -464,7 +464,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/cube2.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/cube2.gif" width="200"/>
 </div>
 
 ----------
@@ -480,7 +480,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/cube3.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/cube3.gif" width="200"/>
 </div>
 
 ----------
@@ -496,7 +496,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/blinds1.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/blinds1.gif" width="200"/>
 </div>
 
 ----------
@@ -512,7 +512,7 @@ frgallah, frgallah@outlook.com
 
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/blinds2.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/blinds2.gif" width="200"/>
 </div>
 
 ----------
@@ -520,7 +520,7 @@ frgallah, frgallah@outlook.com
 15. Puzzle 1
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/puzzle1.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/Gifs/puzzle1.gif" width="200"/>
 </div>
 
 ----------
@@ -528,97 +528,97 @@ frgallah, frgallah@outlook.com
 ### Coming soon
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more1.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more1.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more2.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more2.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more3.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more3.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more4.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more4.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more5.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more5.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more6.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more6.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more7.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more7.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more8.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more8.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more9.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more9.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more10.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more10.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more11.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more11.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more12.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more12.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more13.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more13.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more14.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more14.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more15.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more15.gif" width="200"/>
 </div>
 
 ----------
 
 <div>
-<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more16.gif"/>
+<img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/a6e2bfa1/Documentation/MoreGifs/more16.gif" width="200"/>
 </div>
 
 ----------
