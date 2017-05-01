@@ -24,7 +24,7 @@
 
 import UIKit
 
-class MTSwingDoorTransition: MTLayerTransitionAnimator {
+class SwingDoorTransition: LayerTransitionAnimator {
     
     override func setupTranisition(mainLayer:CALayer, fromLayer:CALayer, toLayer:CALayer, fromLayerFrame:CGRect, toLayerFrame:CGRect) {
         
@@ -122,7 +122,7 @@ class MTSwingDoorTransition: MTLayerTransitionAnimator {
         toLayerRotationAnimation.duration = self.duration
         layer2.sublayerTransform = t
         
-        let animator: MTLayerPropertyAnimator = MTLayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
+        let animator: LayerPropertyAnimator = LayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
             
             self.transitionView?.backgroundColor = self.backgroundColor
             

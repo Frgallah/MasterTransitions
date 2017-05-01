@@ -23,7 +23,7 @@
 
 import UIKit
 
-class MTDoorTransition5: MTTransitionAnimator {
+class DoorTransition5: TransitionAnimator {
     
     override func setupTranisition(containerView: UIView, fromView: UIView, toView: UIView, fromViewFrame: CGRect, toViewFrame: CGRect) {
         

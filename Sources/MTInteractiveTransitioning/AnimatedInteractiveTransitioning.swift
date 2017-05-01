@@ -15,7 +15,7 @@
 
 import UIKit
 
-enum MTGestureDirection: Int {
+enum GestureDirection: Int {
     case Default
     case LeftToRight
     case RightToLeft
@@ -25,10 +25,10 @@ enum MTGestureDirection: Int {
 
 
 
-class MTAnimatedInteractiveTransitioning: NSObject {
+class AnimatedInteractiveTransitioning: NSObject {
     fileprivate var initiallyInteractive = false
-    private let transitionType: MTTransitionType
-    private let transitionSubType: MTTransitionSubType
+    private let transitionType: TransitionType
+    private let transitionSubType: TransitionSubType
     fileprivate var duration: TimeInterval = 0
     var panGestureRecognizer: UIPanGestureRecognizer? {
         didSet {
@@ -41,13 +41,13 @@ class MTAnimatedInteractiveTransitioning: NSObject {
             transition.backgroundColor = newValue
         }
     }
-    var gestureDirection: MTGestureDirection?
+    var gestureDirection: GestureDirection?
     fileprivate var context: UIViewControllerContextTransitioning?
-    var transition: MTTransitionAnimator!
+    var transition: TransitionAnimator!
     fileprivate var initialTranslation =  CGPoint.zero
     private var lastPercentage: CGFloat = 0
     
-    init(transitionType: MTTransitionType,  transitionSubType:MTTransitionSubType, duration:TimeInterval, panGestureRecognizer:UIPanGestureRecognizer?, gestureDirection:MTGestureDirection?, backgroundColor: UIColor?) {
+    init(transitionType: TransitionType,  transitionSubType:TransitionSubType, duration:TimeInterval, panGestureRecognizer:UIPanGestureRecognizer?, gestureDirection:GestureDirection?, backgroundColor: UIColor?) {
         self.transitionType = transitionType
         self.transitionSubType = transitionSubType
         self.gestureDirection = gestureDirection;
@@ -57,8 +57,8 @@ class MTAnimatedInteractiveTransitioning: NSObject {
         
         
         super.init()
-        transition = MTTransitionLoader.transitionForType(transitionType: transitionType, transitionSubType: transitionSubType)
-        self.transition.duration = duration > 0 ? duration : self.transition.defaultDuration
+        transition = TransitionLoader.transitionForType(transitionType: transitionType, transitionSubType: transitionSubType)
+        transition.duration = duration > 0 ? duration : transition.defaultDuration
         self.duration = transition.duration
         
         if let gesture = panGestureRecognizer {
@@ -102,7 +102,7 @@ class MTAnimatedInteractiveTransitioning: NSObject {
         
     }
     
-    func percentFor(gesture: UIPanGestureRecognizer) -> CGFloat {
+    private func percentFor(gesture: UIPanGestureRecognizer) -> CGFloat {
         
         guard let containerView = context?.containerView else {
             return lastPercentage
@@ -138,7 +138,7 @@ class MTAnimatedInteractiveTransitioning: NSObject {
         return percentage
     }
     
-    func completionPosition() -> UIViewAnimatingPosition {
+    private func completionPosition() -> UIViewAnimatingPosition {
         if transition.fractionComplete < transition.midDuration {
             return .start;
         } else {
@@ -146,7 +146,7 @@ class MTAnimatedInteractiveTransitioning: NSObject {
         }
     }
     
-    func endInteraction() {
+    private func endInteraction() {
         
         guard let transitiContext = context , transitiContext.isInteractive else { return }
         let position = completionPosition()
@@ -160,9 +160,9 @@ class MTAnimatedInteractiveTransitioning: NSObject {
         
     }
     
-    func transitionAnimator() -> MTTransitionAnimator {
+    fileprivate func transitionAnimator() -> TransitionAnimator {
         if transition == nil {
-            return MTTransitionLoader.transitionForType(transitionType: transitionType, transitionSubType: transitionSubType)
+            return TransitionLoader.transitionForType(transitionType: transitionType, transitionSubType: transitionSubType)
             
         } else {
             return transition
@@ -172,7 +172,7 @@ class MTAnimatedInteractiveTransitioning: NSObject {
     
 }
 
-extension MTAnimatedInteractiveTransitioning : UIViewControllerAnimatedTransitioning {
+extension AnimatedInteractiveTransitioning : UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         
@@ -251,7 +251,7 @@ extension MTAnimatedInteractiveTransitioning : UIViewControllerAnimatedTransitio
     
 }
 
-extension MTAnimatedInteractiveTransitioning : UIViewControllerInteractiveTransitioning {
+extension AnimatedInteractiveTransitioning : UIViewControllerInteractiveTransitioning {
     
     func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
      

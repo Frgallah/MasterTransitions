@@ -15,9 +15,9 @@
 
 import UIKit
 
-let MTModalControllerTransitionDelegateAssociationKey = "MTModalControllerTransitionDelegateAssociationKey"
+let ModalControllerTransitionDelegateAssociationKey = "ModalControllerTransitionDelegateAssociationKey"
 
-public class MTModalControllerDelegate: NSObject {
+public class ModalControllerDelegate: NSObject {
 
     /**
      Pan gesture for interactive presentation, Not supported yet.
@@ -47,7 +47,7 @@ public class MTModalControllerDelegate: NSObject {
      */
     @IBOutlet public weak var destinationController:UIViewController? {
         didSet {
-            objc_setAssociatedObject(destinationController, UnsafeRawPointer.init(MTModalControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(destinationController, UnsafeRawPointer.init(ModalControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             destinationController?.transitioningDelegate = self
             
         }
@@ -59,10 +59,10 @@ public class MTModalControllerDelegate: NSObject {
      */
     @IBInspectable public var type: UInt = 0 {
         willSet(newType) {
-            if newType < UInt(MTTransitionType.Max.rawValue) {
-                transitionType = MTTransitionType(rawValue: Int(newType))!
+            if newType < UInt(TransitionType.Max.rawValue) {
+                transitionType = TransitionType(rawValue: Int(newType))!
             } else {
-                transitionType = MTTransitionType.Push2
+                transitionType = TransitionType.Push2
             }
         }
     }
@@ -72,10 +72,10 @@ public class MTModalControllerDelegate: NSObject {
      */
     @IBInspectable public var subType: UInt = 0 {
         willSet(newSubType) {
-            if newSubType < UInt(MTTransitionSubType.None.rawValue) {
-                transitionSubType = MTTransitionSubType(rawValue: Int(newSubType))!
+            if newSubType < UInt(TransitionSubType.None.rawValue) {
+                transitionSubType = TransitionSubType(rawValue: Int(newSubType))!
             } else {
-                transitionSubType = MTTransitionSubType.RightToLeft
+                transitionSubType = TransitionSubType.RightToLeft
             }
         }
     }
@@ -84,7 +84,7 @@ public class MTModalControllerDelegate: NSObject {
     /**
      Gesture dismissal direction (enum), default value is set to direction left to right.
      */
-    @IBInspectable var gestureDismissalDirection:MTGestureDirection = .LeftToRight
+    @IBInspectable var gestureDismissalDirection:GestureDirection = .LeftToRight
     
     
     /**
@@ -92,9 +92,9 @@ public class MTModalControllerDelegate: NSObject {
      */
     @IBInspectable public var duration: Double = 2
     
-    public var transitionType: MTTransitionType = .Push2
-    var oppsiteSubType: MTTransitionSubType = .LeftToRight
-    public var transitionSubType: MTTransitionSubType = .RightToLeft {
+    public var transitionType: TransitionType = .Push2
+    var oppsiteSubType: TransitionSubType = .LeftToRight
+    public var transitionSubType: TransitionSubType = .RightToLeft {
         willSet(newTransitionSubType) {
             oppsiteSubType = oppsiteTransition(subType: newTransitionSubType)
         }
@@ -110,13 +110,13 @@ public class MTModalControllerDelegate: NSObject {
     }
     
     
-    public init(destinationController:UIViewController,transitionType: MTTransitionType) {
+    public init(destinationController:UIViewController,transitionType: TransitionType) {
         self.destinationController = destinationController
         self.transitionType = transitionType
         super.init()
         destinationController.transitioningDelegate = self
         destinationController.modalPresentationStyle = .fullScreen
-        objc_setAssociatedObject(destinationController, UnsafeRawPointer.init(MTModalControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(destinationController, UnsafeRawPointer.init(ModalControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
     }
     
@@ -151,11 +151,11 @@ public class MTModalControllerDelegate: NSObject {
         
     }
   
-    func removeGestureForDismissalRecognizer() {
+    private func removeGestureForDismissalRecognizer() {
         //
     }
     
-    func panGestureForPresentationDidPan(_ gesture: UIPanGestureRecognizer) {
+    @objc private func panGestureForPresentationDidPan(_ gesture: UIPanGestureRecognizer) {
         
         if ((sourceController?.transitionCoordinator) != nil) {
             return
@@ -166,7 +166,7 @@ public class MTModalControllerDelegate: NSObject {
         }
     }
     
-    func panGestureForDismissalDidPan(_ gesture: UIPanGestureRecognizer) {
+    @objc private func panGestureForDismissalDidPan(_ gesture: UIPanGestureRecognizer) {
         
         if ((destinationController?.transitionCoordinator) != nil) {
             return
@@ -178,7 +178,7 @@ public class MTModalControllerDelegate: NSObject {
         
     }
     
-    func beginInteractivePresentationTransitionIfPossible(gesture: UIPanGestureRecognizer) {
+    private func beginInteractivePresentationTransitionIfPossible(gesture: UIPanGestureRecognizer) {
         
         let translation: CGPoint = gesture.translation(in: sourceController?.view)
         guard let toController = destinationController else { return }
@@ -214,7 +214,7 @@ public class MTModalControllerDelegate: NSObject {
         
     }
     
-    func beginInteractiveDismissalTransitionIfPossible(gesture: UIPanGestureRecognizer) {
+    private func beginInteractiveDismissalTransitionIfPossible(gesture: UIPanGestureRecognizer) {
         
         let translation: CGPoint = gesture.translation(in: destinationController?.view)
         guard let presentingController = destinationController?.presentingViewController else { return }
@@ -249,7 +249,7 @@ public class MTModalControllerDelegate: NSObject {
         })
     }
     
-    func oppsiteTransition(subType: MTTransitionSubType) -> MTTransitionSubType {
+    fileprivate func oppsiteTransition(subType: TransitionSubType) -> TransitionSubType {
         switch (subType) {
         case .LeftToRight:
             gestureDismissalDirection = .RightToLeft
@@ -283,7 +283,7 @@ public class MTModalControllerDelegate: NSObject {
     
 }
 
-extension MTModalControllerDelegate : UIGestureRecognizerDelegate {
+extension ModalControllerDelegate : UIGestureRecognizerDelegate {
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
@@ -291,24 +291,24 @@ extension MTModalControllerDelegate : UIGestureRecognizerDelegate {
     
 }
 
-extension MTModalControllerDelegate : UIViewControllerTransitioningDelegate {
+extension ModalControllerDelegate : UIViewControllerTransitioningDelegate {
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return MTAnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: transitionSubType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
+        return AnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: transitionSubType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
         
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return MTAnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: oppsiteSubType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
+        return AnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: oppsiteSubType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
     }
     
     public func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         
         guard let gesture = panGestureForPresentation, gesture.state == .began || gesture.state == .changed else { return nil}
         
-        let animatedInteractiveTransitioning = animator as! MTAnimatedInteractiveTransitioning
+        let animatedInteractiveTransitioning = animator as! AnimatedInteractiveTransitioning
         animatedInteractiveTransitioning.gestureDirection = gestureDismissalDirection
         animatedInteractiveTransitioning.panGestureRecognizer = gesture
         
@@ -319,7 +319,7 @@ extension MTModalControllerDelegate : UIViewControllerTransitioningDelegate {
         
         guard let gesture = panGestureForDismissal, gesture.state == .began || gesture.state == .changed else { return nil}
         
-        let animatedInteractiveTransitioning = animator as! MTAnimatedInteractiveTransitioning
+        let animatedInteractiveTransitioning = animator as! AnimatedInteractiveTransitioning
         animatedInteractiveTransitioning.gestureDirection = gestureDismissalDirection
         animatedInteractiveTransitioning.panGestureRecognizer = gesture
         

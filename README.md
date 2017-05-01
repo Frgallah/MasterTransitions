@@ -65,7 +65,7 @@ guard let navigationController = self.navigationController else {
 return
 }
 // 2- Create a Navigation Controller delegate with :
-let navigationControllerDelegate = MTNavigationControllerDelegate.init(navigationController: navigationController, transitionType: .Puzzle1, isInteractive: true)
+let navigationControllerDelegate = NavigationControllerDelegate.init(navigationController: navigationController, transitionType: .Puzzle1, isInteractive: true)
 // 3- Optional: in your delegate object
 //     - set the transition duration
 //     - set the transition direction
@@ -83,7 +83,7 @@ guard let tabBarController = self.tabBarController else {
 return
 }
 // 2- Create a tabBar Controller delegate with :
-let tabBarControllerDelegate = MTTabBarControllerDelegate.init(tabBarController: tabBarController, transitionType: .Puzzle1, isInteractive: true)
+let tabBarControllerDelegate = TabBarControllerDelegate.init(tabBarController: tabBarController, transitionType: .Puzzle1, isInteractive: true)
 // 3- Optional: in your delegate object
 //     - set the transition duration
 //     - set the transition direction
@@ -119,7 +119,7 @@ tabBar controller scene
 
 2. In the Custom Class Inspector of the object set its class to:
 
-MTNavigationControllerDelegate 
+NavigationControllerDelegate 
 
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/2b463931/Documentation/Images/naviCustomClass.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -128,7 +128,7 @@ MTNavigationControllerDelegate
 
 or
 
-MTTabBarControllerDelegate
+TabBarControllerDelegate
 
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/2b463931/Documentation/Images/tabCustomClass.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -201,7 +201,7 @@ let destinationController = segue.destination
 // 2- set the modal Presentation Style of your destination controller to full screen
 destinationController.modalPresentationStyle = .fullScreen
 // 3- Create a Modal Controller delegate using the destination controller and a transition type as parameters.
-let controllerDelegate = MTModalControllerDelegate.init(destinationController: destinationController, transitionType: .Door2)
+let controllerDelegate = ModalControllerDelegate.init(destinationController: destinationController, transitionType: .Door2)
 // 4- Optional:
 // - make the transition interactive
 // supply a pan gesture if the destination controller view already has a one, if not do not warry about it, the Modal Controller Delegate will create one for you. 
@@ -235,7 +235,7 @@ if you using the storyboard only:
 
 ----------
 
-3. In the Custom Class Inspector of the object set its class to MTModalControllerDelegate 
+3. In the Custom Class Inspector of the object set its class to ModalControllerDelegate 
 
 <div>
 <img src="https://cdn.rawgit.com/Frgallah/MasterTransitions/2b463931/Documentation/Images/modalCustomClass.png"/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

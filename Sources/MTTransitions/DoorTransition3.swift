@@ -1,5 +1,5 @@
 //
-//  MTDoorTransition4.swift
+//  MTDoorTransition3.swift
 //  Pods
 //
 //  Created by Frgallah on 4/11/17.
@@ -15,15 +15,17 @@
 
 /* Transition's Directions as Transition SubType
  
- Horizontal
- Vertical
+ RightToLeft
+ LeftToRight
+ BottomToTop
+ TopToBottom
  
  */
 
 
 import UIKit
 
-class MTDoorTransition4: MTLayerTransitionAnimator {
+class DoorTransition3: LayerTransitionAnimator {
     
     override func setupTranisition(containerView: UIView, fromView: UIView, toView: UIView, fromViewFrame:CGRect, toViewFrame:CGRect) {
         
@@ -32,7 +34,7 @@ class MTDoorTransition4: MTLayerTransitionAnimator {
         fromView.frame = fromViewFrame
         toView.frame = toViewFrame
         containerView.addSubview(toView)
-        secondView = toView
+        secondView = toView        
         UIGraphicsBeginImageContextWithOptions(fromView.bounds.size, true, (containerView.window?.screen.scale)!)
         fromView.drawHierarchy(in: fromView.bounds, afterScreenUpdates: false)
         fromViewSnapshot = UIGraphicsGetImageFromCurrentImageContext()
@@ -112,41 +114,61 @@ class MTDoorTransition4: MTLayerTransitionAnimator {
         
         var anchorPoint1 = CGPoint.zero;
         var anchorPoint2 = CGPoint.zero;
-        var angle1 = -M_PI_2
-        var angle2 = M_PI_2
+        var angle = M_PI_2
         let width = fromLayerFrame.width
         let height = fromLayerFrame.height
-        var frontLayerTransform1 = CATransform3DIdentity
-        var frontLayerTransform2 = CATransform3DIdentity
+        
+        var frontLayerTransform = CATransform3DIdentity
         
         switch transitionSubType {
-        case .Horizontal:
+        case .LeftToRight:
             
             let halfWidth = width/2.0
             frontLayer1.frame = CGRect(x: 0, y: 0, width: halfWidth, height: height)
             frontLayer2.frame = CGRect(x: halfWidth, y: 0, width: halfWidth, height: height)
             fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
-            anchorPoint1 = CGPoint.init(x: 0, y: 0.5)
+            
+            anchorPoint1 = CGPoint.init(x: 1, y: 0.5)
             anchorPoint2 = CGPoint.init(x: 1, y: 0.5)
-            angle1 = -M_PI_2
-            angle2 = M_PI_2
-            frontLayerTransform1 = CATransform3DMakeRotation(CGFloat(angle1), 0, 1, 0)
-            frontLayerTransform2 = CATransform3DMakeRotation(CGFloat(angle2), 0, 1, 0)
+            angle = M_PI_2
+            frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
             
             
-        case .Vertical:
+        case .RightToLeft:
+            
+            let halfWidth = width/2.0
+            frontLayer1.frame = CGRect(x: 0, y: 0, width: halfWidth, height: height)
+            frontLayer2.frame = CGRect(x: halfWidth, y: 0, width: halfWidth, height: height)
+            fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
+            
+            anchorPoint1 = CGPoint.init(x: 0, y: 0.5)
+            anchorPoint2 = CGPoint.init(x: 0, y: 0.5)
+            angle = -M_PI_2
+            frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
+            
+        case .TopToBottom:
             
             let halfHeight = height/2.0
             frontLayer1.frame = CGRect(x: 0, y: 0, width: width, height: halfHeight)
             frontLayer2.frame = CGRect(x: 0, y: halfHeight, width: width, height: halfHeight)
             fromLayer2.frame = CGRect(x: 0, y: -halfHeight, width: width, height: height)
-            anchorPoint1 = CGPoint.init(x: 0.5, y: 0)
-            anchorPoint2 = CGPoint.init(x: 0.5, y: 1)
-            angle1 = M_PI_2
-            angle2 = -M_PI_2
-            frontLayerTransform1 = CATransform3DMakeRotation(CGFloat(angle1), 1, 0, 0)
-            frontLayerTransform2 = CATransform3DMakeRotation(CGFloat(angle2), 1, 0, 0)
             
+            anchorPoint1 = CGPoint.init(x: 0.5, y: 1)
+            anchorPoint2 = CGPoint.init(x: 0.5, y: 1)
+            angle = -M_PI_2
+            frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 1, 0, 0)
+            
+        case .BottomToTop:
+            
+            let halfHeight = height/2.0
+            frontLayer1.frame = CGRect(x: 0, y: 0, width: width, height: halfHeight)
+            frontLayer2.frame = CGRect(x: 0, y: halfHeight, width: width, height: halfHeight)
+            fromLayer2.frame = CGRect(x: 0, y: -halfHeight, width: width, height: height)
+            
+            anchorPoint1 = CGPoint.init(x: 0.5, y: 0)
+            anchorPoint2 = CGPoint.init(x: 0.5, y: 0)
+            angle = M_PI_2
+            frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 1, 0, 0)
             
         default:
             
@@ -154,12 +176,11 @@ class MTDoorTransition4: MTLayerTransitionAnimator {
             frontLayer1.frame = CGRect(x: 0, y: 0, width: halfWidth, height: height)
             frontLayer2.frame = CGRect(x: halfWidth, y: 0, width: halfWidth, height: height)
             fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
-            anchorPoint1 = CGPoint.init(x: 0, y: 0.5)
+            
+            anchorPoint1 = CGPoint.init(x: 1, y: 0.5)
             anchorPoint2 = CGPoint.init(x: 1, y: 0.5)
-            angle1 = -M_PI_2
-            angle2 = M_PI_2
-            frontLayerTransform1 = CATransform3DMakeRotation(CGFloat(angle1), 0, 1, 0)
-            frontLayerTransform2 = CATransform3DMakeRotation(CGFloat(angle2), 0, 1, 0)
+            angle = M_PI_2
+            frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
             
             
         }
@@ -190,21 +211,21 @@ class MTDoorTransition4: MTLayerTransitionAnimator {
         
         let frontLayerRotationAnimation1 = CABasicAnimation(keyPath: "transform")
         frontLayerRotationAnimation1.fromValue = frontLayer1.transform
-        frontLayerRotationAnimation1.toValue = frontLayerTransform1
-        frontLayerRotationAnimation1.beginTime = 0;
+        frontLayerRotationAnimation1.toValue = frontLayerTransform
+        frontLayerRotationAnimation1.beginTime = 0
         frontLayerRotationAnimation1.duration = self.duration
-        frontLayer1.transform = frontLayerTransform1
+        frontLayer1.transform = frontLayerTransform
         
         // To Layer Animation
         
         let frontLayerRotationAnimation2 = CABasicAnimation(keyPath: "transform")
         frontLayerRotationAnimation2.fromValue = frontLayer2.transform
-        frontLayerRotationAnimation2.toValue = frontLayerTransform2
+        frontLayerRotationAnimation2.toValue = frontLayerTransform
         frontLayerRotationAnimation2.beginTime = 0
         frontLayerRotationAnimation2.duration = self.duration
-        frontLayer2.transform = frontLayerTransform2
+        frontLayer2.transform = frontLayerTransform
         
-        let animator: MTLayerPropertyAnimator = MTLayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
+        let animator: LayerPropertyAnimator = LayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
             
             self.transitionView?.backgroundColor = self.backgroundColor
             mainLayer.add(mainLayerTranslateAnimation, forKey: nil)
@@ -243,6 +264,4 @@ class MTDoorTransition4: MTLayerTransitionAnimator {
     }
     
     
-    
 }
-

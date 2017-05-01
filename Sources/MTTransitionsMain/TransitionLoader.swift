@@ -15,7 +15,7 @@
 
 import UIKit
 
-enum MTTransitionCategory: Int {
+enum TransitionCategory: Int {
     
     case View
     case Layer
@@ -25,7 +25,7 @@ enum MTTransitionCategory: Int {
 }
 
 
-public enum MTTransitionType: Int {
+public enum TransitionType: Int {
     
     case Push2  //0
     case Pull1 //1
@@ -45,7 +45,7 @@ public enum MTTransitionType: Int {
     case Max
 }
 
-public enum MTTransitionSubType: Int {
+public enum TransitionSubType: Int {
     
     case RightToLeft
     case LeftToRight
@@ -60,43 +60,43 @@ public enum MTTransitionSubType: Int {
 }
 
 
-class MTTransitionLoader: NSObject {
+class TransitionLoader: NSObject {
     
-    class func transitionForType(transitionType: MTTransitionType, transitionSubType:MTTransitionSubType) -> MTTransitionAnimator! {
+    class func transitionForType(transitionType: TransitionType, transitionSubType:TransitionSubType) -> TransitionAnimator! {
         if transitionType == .Push2 {
-            return MTPushTransition2(transitionSubType: transitionSubType)
+            return PushTransition2(transitionSubType: transitionSubType)
         }else if transitionType == .Pull1 {
-            return MTPullTransition1(transitionSubType: transitionSubType)
+            return PullTransition1(transitionSubType: transitionSubType)
         } else if transitionType == .SwingDoor {
-            return MTSwingDoorTransition(transitionSubType: transitionSubType)
+            return SwingDoorTransition(transitionSubType: transitionSubType)
         } else if transitionType == .Door2 {
-            return MTDoorTransition2(transitionSubType: transitionSubType)
+            return DoorTransition2(transitionSubType: transitionSubType)
         } else if transitionType == .Door3 {
-            return MTDoorTransition3(transitionSubType: transitionSubType)
+            return DoorTransition3(transitionSubType: transitionSubType)
         } else if transitionType == .Door4 {
-            return MTDoorTransition4(transitionSubType: transitionSubType)
+            return DoorTransition4(transitionSubType: transitionSubType)
         } else if transitionType == .Door5 {
-            return MTDoorTransition5(transitionSubType: transitionSubType)
+            return DoorTransition5(transitionSubType: transitionSubType)
         } else if transitionType == .Folder1 {
-            return MTFolderTransition1(transitionSubType: transitionSubType)
+            return FolderTransition1(transitionSubType: transitionSubType)
         } else if transitionType == .Book1 {
-            return MTBookTransition1(transitionSubType: transitionSubType)
+            return BookTransition1(transitionSubType: transitionSubType)
         } else if transitionType == .Cube1 {
-            return MTCubeTransition1(transitionSubType: transitionSubType)
+            return CubeTransition1(transitionSubType: transitionSubType)
         } else if transitionType == .Cube2 {
-            return MTCubeTransition2(transitionSubType: transitionSubType)
+            return CubeTransition2(transitionSubType: transitionSubType)
         } else if transitionType == .Cube3 {
-            return MTCubeTransition3(transitionSubType: transitionSubType)
+            return CubeTransition3(transitionSubType: transitionSubType)
         } else if transitionType == .Blinds1 {
-            return MTBlindsTransition1(transitionSubType: transitionSubType)
+            return BlindsTransition1(transitionSubType: transitionSubType)
         } else if transitionType == .Blinds2 {
-            return MTBlindsTransition2(transitionSubType: transitionSubType)
+            return BlindsTransition2(transitionSubType: transitionSubType)
         } else if transitionType == .Puzzle1 {
-            return MTPuzzleTransition1(transitionSubType: transitionSubType)
+            return PuzzleTransition1(transitionSubType: transitionSubType)
         } else if transitionType == .Max {
-            return MTPuzzleTransition1(transitionSubType: transitionSubType)
+            return PuzzleTransition1(transitionSubType: transitionSubType)
         } else {
-            return MTPushTransition2(transitionSubType: transitionSubType)
+            return PushTransition2(transitionSubType: transitionSubType)
         }
         
     }

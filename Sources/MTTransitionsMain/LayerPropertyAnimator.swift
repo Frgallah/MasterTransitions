@@ -15,7 +15,7 @@
 
 import UIKit
 
-class MTLayerPropertyAnimator: UIViewPropertyAnimator {
+class LayerPropertyAnimator: UIViewPropertyAnimator {
     
     var pausedTime: Double = 0
     

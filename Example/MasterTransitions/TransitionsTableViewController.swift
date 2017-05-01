@@ -28,7 +28,7 @@ class TransitionsTableViewController: UITableViewController {
     var controllerType: ControllerTybe = .navigation
     
     private var transitions: [String] = Array()
-    private var transitionType: MTTransitionType = .Push2
+    private var transitionType: TransitionType = .Push2
     
 
     override func viewDidLoad() {
@@ -72,8 +72,8 @@ class TransitionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        if index > -1 && index < MTTransitionType.Max.rawValue {
-            transitionType = MTTransitionType.init(rawValue: index)!
+        if index > -1 && index < TransitionType.Max.rawValue {
+            transitionType = TransitionType.init(rawValue: index)!
         } else {
             transitionType = .Push2
         }

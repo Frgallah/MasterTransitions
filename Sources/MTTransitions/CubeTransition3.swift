@@ -25,7 +25,7 @@
 
 import UIKit
 
-class MTCubeTransition3: MTLayerTransitionAnimator {
+class CubeTransition3: LayerTransitionAnimator {
     
     override func setupTranisition(containerView: UIView, fromView: UIView, toView: UIView, fromViewFrame:CGRect, toViewFrame:CGRect) {
         
@@ -272,7 +272,7 @@ class MTCubeTransition3: MTLayerTransitionAnimator {
         positionAnimation4.values = [cubeView4.transform,cubeView4.transform,mainLayerTransform]
         cubeView4.sublayerTransform = mainLayerTransform
         
-        let animator: MTLayerPropertyAnimator = MTLayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
+        let animator: LayerPropertyAnimator = LayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
             
             transitionView.backgroundColor = self.backgroundColor
             cubeView1.add(positionAnimation1, forKey: nil)

@@ -25,7 +25,7 @@
 
 import UIKit
 
-class MTPullTransition1: MTTransitionAnimator {
+class PullTransition1: TransitionAnimator {
     
     override func setupTranisition(containerView: UIView, fromView: UIView, toView: UIView, fromViewFrame: CGRect, toViewFrame: CGRect) {
         

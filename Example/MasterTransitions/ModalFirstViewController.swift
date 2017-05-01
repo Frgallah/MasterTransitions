@@ -19,7 +19,7 @@ import MasterTransitions
 
 class ModalFirstViewController: UIViewController {
 
-    var transitionType: MTTransitionType = .Push2    
+    var transitionType: TransitionType = .Push2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,7 @@ class ModalFirstViewController: UIViewController {
         if segue.identifier == "toMSVC" {
             let destinationController = segue.destination
             destinationController.modalPresentationStyle = .fullScreen
-            let controllerDelegate = MTModalControllerDelegate.init(destinationController: destinationController, transitionType: transitionType)
+            let controllerDelegate = ModalControllerDelegate.init(destinationController: destinationController, transitionType: transitionType)
             controllerDelegate.addInteractiveToDestinationController(panGesture: nil)
             controllerDelegate.duration = 2
             controllerDelegate.transitionSubType = .RightToLeft

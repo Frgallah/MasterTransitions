@@ -16,13 +16,13 @@
 import UIKit
 
 
-class MTTransitionAnimator: NSObject {
+class TransitionAnimator: NSObject {
     
     var propertyAnimator: UIViewPropertyAnimator?
     var isInteractive: Bool = false
     var duration: TimeInterval = 0
     var midDuration: CGFloat = 0.5
-    var transitionCategory: MTTransitionCategory = .View
+    var transitionCategory: TransitionCategory = .View
     fileprivate(set) var defaultDuration = 1.0;
     var backgroundColor: UIColor = UIColor.black
 
@@ -40,9 +40,9 @@ class MTTransitionAnimator: NSObject {
         }
     }
     
-    var transitionSubType: MTTransitionSubType
+    var transitionSubType: TransitionSubType
     
-    init(transitionSubType: MTTransitionSubType) {
+    init(transitionSubType: TransitionSubType) {
         self.transitionSubType = transitionSubType
         super.init()
         
@@ -93,9 +93,9 @@ class MTTransitionAnimator: NSObject {
     
 }
 
-class MTViewTransitionAnimator: MTTransitionAnimator {
+class ViewTransitionAnimator: TransitionAnimator {
     
-    override init(transitionSubType: MTTransitionSubType) {
+    override init(transitionSubType: TransitionSubType) {
         super.init(transitionSubType: transitionSubType)
         self.transitionCategory = .View
         
@@ -104,7 +104,7 @@ class MTViewTransitionAnimator: MTTransitionAnimator {
 }
 
 
-class MTLayerTransitionAnimator: MTTransitionAnimator {
+class LayerTransitionAnimator: TransitionAnimator {
     
     private var isReversed: Bool = false
     private var fraction: CGFloat = 0
@@ -122,7 +122,7 @@ class MTLayerTransitionAnimator: MTTransitionAnimator {
         }
     }
     
-    override init(transitionSubType: MTTransitionSubType) {
+    override init(transitionSubType: TransitionSubType) {
         super.init(transitionSubType: transitionSubType)
         self.transitionCategory = .Layer
         
@@ -204,7 +204,7 @@ class MTLayerTransitionAnimator: MTTransitionAnimator {
 }
 
 
-class MTInterruptibleTransitionAnimator: MTTransitionAnimator {
+class InterruptibleTransitionAnimator: TransitionAnimator {
     
     func startAnimation() {
         

@@ -15,7 +15,7 @@
 
 import UIKit
 
-class MTPuzzleTransition1: MTTransitionAnimator {
+class PuzzleTransition1: TransitionAnimator {
     
     override func setupTranisition(containerView: UIView, fromView: UIView, toView: UIView, fromViewFrame: CGRect, toViewFrame: CGRect) {
         

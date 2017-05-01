@@ -14,18 +14,18 @@
 //
 
 
-let MTNavigationControllerTransitionDelegateAssociationKey = "MTNavigationControllerTransitionDelegateAssociationKey"
+let NavigationControllerTransitionDelegateAssociationKey = "NavigationControllerTransitionDelegateAssociationKey"
 
 import UIKit
 
-public class MTNavigationControllerDelegate: NSObject {
+public class NavigationControllerDelegate: NSObject {
     
     /**
      Navigation view controller.
      */
     @IBOutlet public weak var navigationController:UINavigationController? {
         didSet {
-            objc_setAssociatedObject(navigationController, UnsafeRawPointer.init(MTNavigationControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(navigationController, UnsafeRawPointer.init(NavigationControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             navigationController?.delegate = self
             
             if isInteractive {
@@ -41,10 +41,10 @@ public class MTNavigationControllerDelegate: NSObject {
      */
     @IBInspectable public var type: UInt = 0 {
         willSet(newType) {
-            if newType < UInt(MTTransitionType.Max.rawValue) {
-                transitionType = MTTransitionType(rawValue: Int(newType))!
+            if newType < UInt(TransitionType.Max.rawValue) {
+                transitionType = TransitionType(rawValue: Int(newType))!
             } else {
-                transitionType = MTTransitionType.Push2
+                transitionType = TransitionType.Push2
             }
         }
     }
@@ -53,10 +53,10 @@ public class MTNavigationControllerDelegate: NSObject {
      */
     @IBInspectable public var subType: UInt = 0 {
         willSet(newSubType) {
-            if newSubType < UInt(MTTransitionSubType.None.rawValue) {
-                transitionSubType = MTTransitionSubType(rawValue: Int(newSubType))!
+            if newSubType < UInt(TransitionSubType.None.rawValue) {
+                transitionSubType = TransitionSubType(rawValue: Int(newSubType))!
             } else {
-                transitionSubType = MTTransitionSubType.RightToLeft
+                transitionSubType = TransitionSubType.RightToLeft
             }
         }
     }
@@ -84,11 +84,11 @@ public class MTNavigationControllerDelegate: NSObject {
     /**
      Gesture pop direction (enum), default value is set to direction left to right.
      */
-    @IBInspectable var gesturePopDirection:MTGestureDirection = .LeftToRight
+    @IBInspectable var gesturePopDirection:GestureDirection = .LeftToRight
     
-    public var transitionType:MTTransitionType = .Push2
-    var oppsiteSubType: MTTransitionSubType = .LeftToRight
-    public var transitionSubType:MTTransitionSubType = .RightToLeft {
+    public var transitionType:TransitionType = .Push2
+    var oppsiteSubType: TransitionSubType = .LeftToRight
+    public var transitionSubType:TransitionSubType = .RightToLeft {
         willSet(newTransitionSubType) {
             oppsiteSubType = oppsiteTransition(subType: newTransitionSubType)
         }
@@ -103,14 +103,14 @@ public class MTNavigationControllerDelegate: NSObject {
         super.init()
     }
     
-    public init(navigationController: UINavigationController, transitionType: MTTransitionType, isInteractive: Bool) {
+    public init(navigationController: UINavigationController, transitionType: TransitionType, isInteractive: Bool) {
         
         self.transitionType = transitionType
         self.isInteractive = isInteractive
         self.navigationController = navigationController
         super.init()
         navigationController.delegate = self
-        objc_setAssociatedObject(self.navigationController, UnsafeRawPointer.init(MTNavigationControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self.navigationController, UnsafeRawPointer.init(NavigationControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
         if isInteractive {
             configurePanGestureRecognizer()
@@ -118,7 +118,7 @@ public class MTNavigationControllerDelegate: NSObject {
         
     }
     
-    func configurePanGestureRecognizer() {
+    private func configurePanGestureRecognizer() {
         panGestureRecognizer = UIPanGestureRecognizer()
         panGestureRecognizer?.delegate = self
         panGestureRecognizer?.maximumNumberOfTouches = 1
@@ -129,11 +129,11 @@ public class MTNavigationControllerDelegate: NSObject {
         panGestureRecognizer?.require(toFail: interactivePopGestureRecognizer)
     }
     
-    func removeGestureRecognizer() {
+    private func removeGestureRecognizer() {
         //
     }
     
-    func panGestureRecognizerDidPan(_ gesture: UIPanGestureRecognizer) {
+    @objc private func panGestureRecognizerDidPan(_ gesture: UIPanGestureRecognizer) {
         if ((navigationController?.transitionCoordinator) != nil) {
             return
         }
@@ -142,7 +142,7 @@ public class MTNavigationControllerDelegate: NSObject {
         }
     }
     
-    func beginInteractiveTransitionIfPossible(gesture: UIPanGestureRecognizer) {
+    private func beginInteractiveTransitionIfPossible(gesture: UIPanGestureRecognizer) {
         
         let translation: CGPoint = gesture.translation(in: navigationController?.view)
         
@@ -209,7 +209,7 @@ public class MTNavigationControllerDelegate: NSObject {
         
     }
     
-    func oppsiteTransition(subType: MTTransitionSubType) -> MTTransitionSubType {
+    fileprivate func oppsiteTransition(subType: TransitionSubType) -> TransitionSubType {
         switch (subType) {
         case .LeftToRight:
             gesturePopDirection = .RightToLeft
@@ -247,14 +247,14 @@ public class MTNavigationControllerDelegate: NSObject {
     
 }
 
-extension MTNavigationControllerDelegate : UIGestureRecognizerDelegate {
+extension NavigationControllerDelegate : UIGestureRecognizerDelegate {
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
 
-extension MTNavigationControllerDelegate : UINavigationControllerDelegate {
+extension NavigationControllerDelegate : UINavigationControllerDelegate {
     
     public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
@@ -263,7 +263,7 @@ extension MTNavigationControllerDelegate : UINavigationControllerDelegate {
             subType = oppsiteTransition(subType: transitionSubType)
         }
         
-        return MTAnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: subType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
+        return AnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: subType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
   
     }
     
@@ -274,7 +274,7 @@ extension MTNavigationControllerDelegate : UINavigationControllerDelegate {
             return nil
         }
         
-        let animatedInteractiveTransitioning = animationController as! MTAnimatedInteractiveTransitioning
+        let animatedInteractiveTransitioning = animationController as! AnimatedInteractiveTransitioning
         animatedInteractiveTransitioning.gestureDirection = gesturePopDirection
         animatedInteractiveTransitioning.panGestureRecognizer = panGestureRecognizer
 

@@ -18,7 +18,7 @@ import MasterTransitions
 
 class NavigationFirstViewController: UIViewController {
 
-    var transitionType: MTTransitionType = .Push2    
+    var transitionType: TransitionType = .Push2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class NavigationFirstViewController: UIViewController {
         guard let navigationController = self.navigationController else {
             return
         }
-        let navigationControllerDelegate = MTNavigationControllerDelegate.init(navigationController: navigationController, transitionType: transitionType, isInteractive: true)
+        let navigationControllerDelegate = NavigationControllerDelegate.init(navigationController: navigationController, transitionType: transitionType, isInteractive: true)
         navigationControllerDelegate.duration = 1.4
         navigationControllerDelegate.transitionSubType = .RightToLeft
         navigationControllerDelegate.transitionBackgroundColor = .black

@@ -1,5 +1,5 @@
 //
-//  MTBookTransition1.swift
+//  MTFolderTransition1.swift
 //  Pods
 //
 //  Created by Frgallah on 4/11/17.
@@ -15,17 +15,15 @@
 
 /* Transition's Directions as Transition SubType
  
- RightToLeft
- LeftToRight
- BottomToTop
- TopToBottom
+ Horizontal
+ Vertical
  
  */
 
 
 import UIKit
 
-class MTBookTransition1: MTLayerTransitionAnimator {
+class FolderTransition1: LayerTransitionAnimator {
     
     override func setupTranisition(containerView: UIView, fromView: UIView, toView: UIView, fromViewFrame:CGRect, toViewFrame:CGRect) {
         
@@ -34,7 +32,7 @@ class MTBookTransition1: MTLayerTransitionAnimator {
         fromView.frame = fromViewFrame
         toView.frame = toViewFrame
         containerView.addSubview(toView)
-        secondView = toView        
+        secondView = toView
         UIGraphicsBeginImageContextWithOptions(fromView.bounds.size, true, (containerView.window?.screen.scale)!)
         fromView.drawHierarchy(in: fromView.bounds, afterScreenUpdates: false)
         fromViewSnapshot = UIGraphicsGetImageFromCurrentImageContext()
@@ -61,44 +59,34 @@ class MTBookTransition1: MTLayerTransitionAnimator {
         fromContentLayer1.frame = fromViewFrame
         fromContentLayer1.rasterizationScale = (fromViewSnapshot?.scale)!
         fromContentLayer1.masksToBounds = true
-        fromContentLayer1.isDoubleSided = true
+        fromContentLayer1.isDoubleSided = false
         fromContentLayer1.contents = fromViewSnapshot?.cgImage
         
         let fromContentLayer2 = CALayer()
         fromContentLayer2.frame = fromViewFrame
         fromContentLayer2.rasterizationScale = (fromViewSnapshot?.scale)!
         fromContentLayer2.masksToBounds = true
-        fromContentLayer2.isDoubleSided = true
+        fromContentLayer2.isDoubleSided = false
         fromContentLayer2.contents = fromViewSnapshot?.cgImage
         
-        let toContentLayer1 = CALayer()
-        toContentLayer1.frame = toViewFrame
-        
-        let toContentLayer2 = CALayer()
-        toContentLayer2.frame = toViewFrame
-        
+        let toContentLayer = CALayer()
+        toContentLayer.frame = fromViewFrame
         DispatchQueue.main.async {
             let wereActiondDisabled = CATransaction.disableActions()
             CATransaction.setDisableActions(true)
-            toContentLayer1.rasterizationScale = (toViewSnapshot?.scale)!
-            toContentLayer1.masksToBounds = true
-            toContentLayer1.isDoubleSided = true
-            toContentLayer1.contents = toViewSnapshot?.cgImage
-            
-            toContentLayer2.rasterizationScale = (toViewSnapshot?.scale)!
-            toContentLayer2.masksToBounds = true
-            toContentLayer2.isDoubleSided = true
-            toContentLayer2.contents = toViewSnapshot?.cgImage
-            
+            toContentLayer.rasterizationScale = (toViewSnapshot?.scale)!
+            toContentLayer.masksToBounds = true
+            toContentLayer.isDoubleSided = false
+            toContentLayer.contents = toViewSnapshot?.cgImage
             CATransaction.setDisableActions(wereActiondDisabled)
             
         }
         
-        setupTranisition(mainLayer: transitionContainer.layer, fromLayer1: fromContentLayer1, fromLayer2: fromContentLayer2,toLayer1: toContentLayer1, toLayer2: toContentLayer2, fromLayerFrame: fromViewFrame, toLayerFrame: toViewFrame)
+        setupTranisition(mainLayer: transitionContainer.layer, fromLayer1: fromContentLayer1, fromLayer2: fromContentLayer2, toLayer: toContentLayer, fromLayerFrame: fromViewFrame, toLayerFrame: toViewFrame)
         
     }
     
-    func setupTranisition(mainLayer:CALayer, fromLayer1:CALayer, fromLayer2:CALayer,toLayer1:CALayer, toLayer2:CALayer, fromLayerFrame:CGRect, toLayerFrame:CGRect) {
+    func setupTranisition(mainLayer:CALayer, fromLayer1:CALayer, fromLayer2:CALayer,toLayer:CALayer, fromLayerFrame:CGRect, toLayerFrame:CGRect) {
         
         var t = CATransform3DIdentity
         t.m34 = 1.0 / -900.0
@@ -108,97 +96,55 @@ class MTBookTransition1: MTLayerTransitionAnimator {
         frontLayer1.frame = fromLayerFrame
         frontLayer1.rasterizationScale = fromLayer1.rasterizationScale
         frontLayer1.masksToBounds = true
-        frontLayer1.isDoubleSided = true
+        frontLayer1.isDoubleSided = false
+        frontLayer1.addSublayer(fromLayer1)
         
         let frontLayer2 = CALayer()
         frontLayer2.frame = fromLayerFrame
         frontLayer2.rasterizationScale = fromLayer2.rasterizationScale
         frontLayer2.masksToBounds = true
-        frontLayer2.isDoubleSided = true
+        frontLayer2.isDoubleSided = false
+        frontLayer2.addSublayer(fromLayer2)
         
-        mainLayer.addSublayer(toLayer1)
+        mainLayer.addSublayer(toLayer)
         mainLayer.addSublayer(frontLayer1)
         mainLayer.addSublayer(frontLayer2)
         
-        var angle = M_PI
-        var valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateY)
+        var anchorPoint1 = CGPoint.zero;
+        var anchorPoint2 = CGPoint.zero;
+        var angle1 = -M_PI_2
+        var angle2 = M_PI_2
         let width = fromLayerFrame.width
         let height = fromLayerFrame.height
-        var frontLayerTransform = CATransform3DIdentity
-        var frontLayer = CALayer()
+        var frontLayerTransform1 = CATransform3DIdentity
+        var frontLayerTransform2 = CATransform3DIdentity
         
         switch transitionSubType {
-        case .LeftToRight:
+        case .Horizontal:
             
             let halfWidth = width/2.0
             frontLayer1.frame = CGRect(x: 0, y: 0, width: halfWidth, height: height)
             frontLayer2.frame = CGRect(x: halfWidth, y: 0, width: halfWidth, height: height)
             fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
-            toLayer2.frame = CGRect(x: 0, y: 0, width: width, height: height)
+            anchorPoint1 = CGPoint.init(x: 1, y: 0.5)
+            anchorPoint2 = CGPoint.init(x: 0, y: 0.5)
+            angle1 = M_PI_2
+            angle2 = -M_PI_2
+            frontLayerTransform1 = CATransform3DMakeRotation(CGFloat(angle1), 0, 1, 0)
+            frontLayerTransform2 = CATransform3DMakeRotation(CGFloat(angle2), 0, 1, 0)
             
-            angle = M_PI
-            valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateY)
-            frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
-            frontLayer1.zPosition = 1
-            frontLayer1.addSublayer(toLayer2)
-            let frame1 = frontLayer1.frame
-            frontLayer1.anchorPoint = CGPoint.init(x: 1, y: 0.5)
-            frontLayer1.frame = frame1
-            frontLayer = frontLayer1
-            
-        case .RightToLeft:
-            
-            let halfWidth = width/2.0
-            frontLayer1.frame = CGRect(x: 0, y: 0, width: halfWidth, height: height)
-            frontLayer2.frame = CGRect(x: halfWidth, y: 0, width: halfWidth, height: height)
-            fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
-            toLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
-            
-            angle = -M_PI
-            valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateY)
-            frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
-            frontLayer2.addSublayer(toLayer2)
-            frontLayer2.zPosition = 1
-            let frame1 = frontLayer2.frame
-            frontLayer2.anchorPoint = CGPoint.init(x: 0, y: 0.5)
-            frontLayer2.frame = frame1
-            frontLayer = frontLayer2
-            
-        case .TopToBottom:
+        case .Vertical:
             
             let halfHeight = height/2.0
             frontLayer1.frame = CGRect(x: 0, y: 0, width: width, height: halfHeight)
             frontLayer2.frame = CGRect(x: 0, y: halfHeight, width: width, height: halfHeight)
             fromLayer2.frame = CGRect(x: 0, y: -halfHeight, width: width, height: height)
-            toLayer2.frame = CGRect(x: 0, y: 0, width: width, height: height)
-            
-            angle = -M_PI
-            valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateX)
-            frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 1, 0, 0)
-            frontLayer1.addSublayer(toLayer2)
-            frontLayer1.zPosition = 1
-            let frame1 = frontLayer1.frame
-            frontLayer1.anchorPoint = CGPoint.init(x: 0.5, y: 1)
-            frontLayer1.frame = frame1
-            frontLayer = frontLayer1
-            
-        case .BottomToTop:
-            
-            let halfHeight = height/2.0
-            frontLayer1.frame = CGRect(x: 0, y: 0, width: width, height: halfHeight)
-            frontLayer2.frame = CGRect(x: 0, y: halfHeight, width: width, height: halfHeight)
-            fromLayer2.frame = CGRect(x: 0, y: -halfHeight, width: width, height: height)
-            toLayer2.frame = CGRect(x: 0, y: -halfHeight, width: width, height: height)
-            
-            angle = M_PI
-            valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateX)
-            frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 1, 0, 0)
-            frontLayer2.addSublayer(toLayer2)
-            frontLayer2.zPosition = 1
-            let frame1 = frontLayer2.frame
-            frontLayer2.anchorPoint = CGPoint.init(x: 0.5, y: 0)
-            frontLayer2.frame = frame1
-            frontLayer = frontLayer2
+            anchorPoint1 = CGPoint.init(x: 0.5, y: 1)
+            anchorPoint2 = CGPoint.init(x: 0.5, y: 0)
+            angle1 = -M_PI_2
+            angle2 = M_PI_2
+            frontLayerTransform1 = CATransform3DMakeRotation(CGFloat(angle1), 1, 0, 0)
+            frontLayerTransform2 = CATransform3DMakeRotation(CGFloat(angle2), 1, 0, 0)
             
         default:
             
@@ -206,30 +152,24 @@ class MTBookTransition1: MTLayerTransitionAnimator {
             frontLayer1.frame = CGRect(x: 0, y: 0, width: halfWidth, height: height)
             frontLayer2.frame = CGRect(x: halfWidth, y: 0, width: halfWidth, height: height)
             fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
-            toLayer2.frame = CGRect(x: 0, y: 0, width: width, height: height)
-            
-            angle = M_PI
-            valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateY)
-            frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
-            frontLayer1.addSublayer(toLayer2)
-            frontLayer1.zPosition = 1
-            let frame1 = frontLayer1.frame
-            frontLayer1.anchorPoint = CGPoint.init(x: 1, y: 0.5)
-            frontLayer1.frame = frame1
-            frontLayer = frontLayer1
+            anchorPoint1 = CGPoint.init(x: 1, y: 0.5)
+            anchorPoint2 = CGPoint.init(x: 0, y: 0.5)
+            angle1 = M_PI_2
+            angle2 = -M_PI_2
+            frontLayerTransform1 = CATransform3DMakeRotation(CGFloat(angle1), 0, 1, 0)
+            frontLayerTransform2 = CATransform3DMakeRotation(CGFloat(angle2), 0, 1, 0)
             
         }
         
-        frontLayer1.addSublayer(fromLayer1)
-        frontLayer2.addSublayer(fromLayer2)
-        
-        DispatchQueue.main.async {
-            let wereActiondDisabled = CATransaction.disableActions()
-            CATransaction.setDisableActions(true)
-            toLayer2.transform = frontLayerTransform;
-            CATransaction.setDisableActions(wereActiondDisabled)
-            
-        }
+        let wereActiondDisabled = CATransaction.disableActions()
+        CATransaction.setDisableActions(true)
+        let frame1 = frontLayer1.frame
+        frontLayer1.anchorPoint = anchorPoint1
+        frontLayer1.frame = frame1
+        let frame2 = frontLayer2.frame
+        frontLayer2.anchorPoint = anchorPoint2
+        frontLayer2.frame = frame2
+        CATransaction.setDisableActions(wereActiondDisabled)
         
         // Main Layer Animation
         
@@ -246,26 +186,27 @@ class MTBookTransition1: MTLayerTransitionAnimator {
         // From Layer Animation
         
         let frontLayerRotationAnimation1 = CABasicAnimation(keyPath: "transform")
-        frontLayerRotationAnimation1.fromValue = 0
-        frontLayerRotationAnimation1.toValue = angle
+        frontLayerRotationAnimation1.fromValue = frontLayer1.transform
+        frontLayerRotationAnimation1.toValue = frontLayerTransform1
         frontLayerRotationAnimation1.beginTime = 0;
         frontLayerRotationAnimation1.duration = self.duration
-        frontLayerRotationAnimation1.valueFunction = valueFunction
-        frontLayer.transform = frontLayerTransform
+        frontLayer1.transform = frontLayerTransform1
         
-        let zPositionAnimation = CABasicAnimation(keyPath: "zPosition")
-        zPositionAnimation.fromValue = -1
-        zPositionAnimation.toValue = 1
-        zPositionAnimation.beginTime = 0
-        zPositionAnimation.duration = self.duration
-        toLayer2.zPosition = 1
+        // To Layer Animation
         
-        let animator: MTLayerPropertyAnimator = MTLayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
+        let frontLayerRotationAnimation2 = CABasicAnimation(keyPath: "transform")
+        frontLayerRotationAnimation2.fromValue = frontLayer2.transform
+        frontLayerRotationAnimation2.toValue = frontLayerTransform2
+        frontLayerRotationAnimation2.beginTime = 0
+        frontLayerRotationAnimation2.duration = self.duration
+        frontLayer2.transform = frontLayerTransform2
+        
+        let animator: LayerPropertyAnimator = LayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
             
             self.transitionView?.backgroundColor = self.backgroundColor
             mainLayer.add(mainLayerTranslateAnimation, forKey: nil)
-            frontLayer.add(frontLayerRotationAnimation1, forKey: nil)
-            toLayer2.add(zPositionAnimation, forKey: nil)
+            frontLayer1.add(frontLayerRotationAnimation1, forKey: nil)
+            frontLayer2.add(frontLayerRotationAnimation2, forKey: nil)
             
         })
         
@@ -281,10 +222,11 @@ class MTBookTransition1: MTLayerTransitionAnimator {
             }
             
         })
+        
         animator.animationUpdated = ({
             
-            frontLayer.transform = CATransform3DIdentity
-            toLayer2.zPosition = -1
+            frontLayer1.transform = CATransform3DIdentity
+            frontLayer2.transform = CATransform3DIdentity
             
         })
         
@@ -299,3 +241,4 @@ class MTBookTransition1: MTLayerTransitionAnimator {
     }
     
 }
+

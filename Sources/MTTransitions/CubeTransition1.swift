@@ -1,5 +1,5 @@
 //
-//  MTCubeTransition2.swift
+//  MTCubeTransition1.swift
 //  Pods
 //
 //  Created by Frgallah on 4/11/17.
@@ -22,15 +22,10 @@
  
  */
 
+
 import UIKit
 
-class MTCubeTransition2: MTLayerTransitionAnimator {
-    
-    override init(transitionSubType: MTTransitionSubType) {
-        super.init(transitionSubType: transitionSubType)
-        self.midDuration = 0.3
-        
-    }
+class CubeTransition1: LayerTransitionAnimator {
     
     override func setupTranisition(containerView: UIView, fromView: UIView, toView: UIView, fromViewFrame:CGRect, toViewFrame:CGRect) {
         
@@ -47,11 +42,7 @@ class MTCubeTransition2: MTLayerTransitionAnimator {
         t.m34 = 1 / -900
         
         let angle = M_PI_2
-        var mainLayerTransform1 = t
-        var mainLayerTransform2 = t
-        var mainLayerTransform3 = t
-        var mainLayerTransform4 = t
-        
+        var mainLayerTransform = t
         var toContentLayerTransform1 = CATransform3DIdentity
         var toContentLayerTransform2 = CATransform3DIdentity
         
@@ -66,21 +57,9 @@ class MTCubeTransition2: MTLayerTransitionAnimator {
             toContentLayerTransform2 = CATransform3DRotate(toContentLayerTransform2,CGFloat(-angle), 0, 1, 0)
             toContentLayerTransform2 =  CATransform3DTranslate(toContentLayerTransform2,0, 0, width/2.0)
             
-            mainLayerTransform1 =  CATransform3DTranslate(mainLayerTransform1,0, 0, -width/2.0)
-            mainLayerTransform1 = CATransform3DRotate(mainLayerTransform1,CGFloat(angle - 0.08), 0, 1, 0)
-            mainLayerTransform1 =  CATransform3DTranslate(mainLayerTransform1,0, 0, width/2.0)
-            
-            mainLayerTransform2 =  CATransform3DTranslate(mainLayerTransform2,0, 0, -width/2.0)
-            mainLayerTransform2 = CATransform3DRotate(mainLayerTransform2,CGFloat(angle - 0.04), 0, 1, 0)
-            mainLayerTransform2 =  CATransform3DTranslate(mainLayerTransform2,0, 0, width/2.0)
-            
-            mainLayerTransform3 =  CATransform3DTranslate(mainLayerTransform3,0, 0, -width/2.0)
-            mainLayerTransform3 = CATransform3DRotate(mainLayerTransform3,CGFloat(angle + 0.05), 0, 1, 0)
-            mainLayerTransform3 =  CATransform3DTranslate(mainLayerTransform3,0, 0, width/2.0)
-            
-            mainLayerTransform4 =  CATransform3DTranslate(mainLayerTransform4,0, 0, -width/2.0)
-            mainLayerTransform4 = CATransform3DRotate(mainLayerTransform4,CGFloat(angle), 0, 1, 0)
-            mainLayerTransform4 =  CATransform3DTranslate(mainLayerTransform4,0, 0, width/2.0)
+            mainLayerTransform =  CATransform3DTranslate(mainLayerTransform,0, 0, -width/2.0)
+            mainLayerTransform = CATransform3DRotate(mainLayerTransform,CGFloat(angle), 0, 1, 0)
+            mainLayerTransform =  CATransform3DTranslate(mainLayerTransform,0, 0, width/2.0)
             
         case .RightToLeft:
             
@@ -92,22 +71,9 @@ class MTCubeTransition2: MTLayerTransitionAnimator {
             toContentLayerTransform2 = CATransform3DRotate(toContentLayerTransform2,CGFloat(-angle), 0, 1, 0)
             toContentLayerTransform2 =  CATransform3DTranslate(toContentLayerTransform2,0, 0, width/2.0)
             
-            mainLayerTransform1 =  CATransform3DTranslate(mainLayerTransform1,0, 0, -width/2.0)
-            mainLayerTransform1 = CATransform3DRotate(mainLayerTransform1,CGFloat(-(angle - 0.08)), 0, 1, 0)
-            mainLayerTransform1 =  CATransform3DTranslate(mainLayerTransform1,0, 0, width/2.0)
-            
-            mainLayerTransform2 =  CATransform3DTranslate(mainLayerTransform2,0, 0, -width/2.0)
-            mainLayerTransform2 = CATransform3DRotate(mainLayerTransform2,CGFloat(-(angle - 0.04)), 0, 1, 0)
-            mainLayerTransform2 =  CATransform3DTranslate(mainLayerTransform2,0, 0, width/2.0)
-            
-            mainLayerTransform3 =  CATransform3DTranslate(mainLayerTransform3,0, 0, -width/2.0)
-            mainLayerTransform3 = CATransform3DRotate(mainLayerTransform3,CGFloat(-(angle + 0.05)), 0, 1, 0)
-            mainLayerTransform3 =  CATransform3DTranslate(mainLayerTransform3,0, 0, width/2.0)
-            
-            mainLayerTransform4 =  CATransform3DTranslate(mainLayerTransform4,0, 0, -width/2.0)
-            mainLayerTransform4 = CATransform3DRotate(mainLayerTransform4,CGFloat(-angle), 0, 1, 0)
-            mainLayerTransform4 =  CATransform3DTranslate(mainLayerTransform4,0, 0, width/2.0)
-            
+            mainLayerTransform =  CATransform3DTranslate(mainLayerTransform,0, 0, -width/2.0)
+            mainLayerTransform = CATransform3DRotate(mainLayerTransform,CGFloat(-angle), 0, 1, 0)
+            mainLayerTransform =  CATransform3DTranslate(mainLayerTransform,0, 0, width/2.0)
             
         case .TopToBottom:
             
@@ -118,75 +84,37 @@ class MTCubeTransition2: MTLayerTransitionAnimator {
             toContentLayerTransform2 =  CATransform3DTranslate(toContentLayerTransform2,0, 0, -height/2.0)
             toContentLayerTransform2 = CATransform3DRotate(toContentLayerTransform2,CGFloat(angle), 1, 0, 0)
             toContentLayerTransform2 =  CATransform3DTranslate(toContentLayerTransform2,0, 0, height/2.0)
-            
-            mainLayerTransform1 =  CATransform3DTranslate(mainLayerTransform1,0, 0, -height/2.0)
-            mainLayerTransform1 = CATransform3DRotate(mainLayerTransform1,CGFloat(-(angle - 0.08)), 1, 0, 0)
-            mainLayerTransform1 =  CATransform3DTranslate(mainLayerTransform1,0, 0, height/2.0)
-            
-            mainLayerTransform2 =  CATransform3DTranslate(mainLayerTransform2,0, 0, -height/2.0)
-            mainLayerTransform2 = CATransform3DRotate(mainLayerTransform2,CGFloat(-(angle - 0.04)), 1, 0, 0)
-            mainLayerTransform2 =  CATransform3DTranslate(mainLayerTransform2,0, 0, height/2.0)
-            
-            mainLayerTransform3 =  CATransform3DTranslate(mainLayerTransform3,0, 0, -height/2.0)
-            mainLayerTransform3 = CATransform3DRotate(mainLayerTransform3,CGFloat(-(angle + 0.05)), 1, 0, 0)
-            mainLayerTransform3 =  CATransform3DTranslate(mainLayerTransform3,0, 0, height/2.0)
-            
-            mainLayerTransform4 =  CATransform3DTranslate(mainLayerTransform4,0, 0, -height/2.0)
-            mainLayerTransform4 = CATransform3DRotate(mainLayerTransform4,CGFloat(-angle), 1, 0, 0)
-            mainLayerTransform4 =  CATransform3DTranslate(mainLayerTransform4,0, 0, height/2.0)
+            mainLayerTransform =  CATransform3DTranslate(mainLayerTransform,0, 0, -height/2.0)
+            mainLayerTransform = CATransform3DRotate(mainLayerTransform,CGFloat(-angle), 1, 0, 0)
+            mainLayerTransform =  CATransform3DTranslate(mainLayerTransform,0, 0, height/2.0)
             
         case .BottomToTop:
             
             let height = toViewFrame.height
+            
             toContentLayerTransform1 =  CATransform3DTranslate(toContentLayerTransform1,0, 0, -height/2.0)
             toContentLayerTransform1 = CATransform3DRotate(toContentLayerTransform1,CGFloat(-angle), 1, 0, 0)
             toContentLayerTransform1 =  CATransform3DTranslate(toContentLayerTransform1,0, 0, height/2.0)
             toContentLayerTransform2 =  CATransform3DTranslate(toContentLayerTransform2,0, 0, -height/2.0)
             toContentLayerTransform2 = CATransform3DRotate(toContentLayerTransform2,CGFloat(angle), 1, 0, 0)
             toContentLayerTransform2 =  CATransform3DTranslate(toContentLayerTransform2,0, 0, height/2.0)
-            
-            mainLayerTransform1 =  CATransform3DTranslate(mainLayerTransform1,0, 0, -height/2.0)
-            mainLayerTransform1 = CATransform3DRotate(mainLayerTransform1,CGFloat(angle - 0.08), 1, 0, 0)
-            mainLayerTransform1 =  CATransform3DTranslate(mainLayerTransform1,0, 0, height/2.0)
-            
-            mainLayerTransform2 =  CATransform3DTranslate(mainLayerTransform2,0, 0, -height/2.0)
-            mainLayerTransform2 = CATransform3DRotate(mainLayerTransform2,CGFloat(angle - 0.04), 1, 0, 0)
-            mainLayerTransform2 =  CATransform3DTranslate(mainLayerTransform2,0, 0, height/2.0)
-            
-            mainLayerTransform3 =  CATransform3DTranslate(mainLayerTransform3,0, 0, -height/2.0)
-            mainLayerTransform3 = CATransform3DRotate(mainLayerTransform3,CGFloat(angle + 0.05), 1, 0, 0)
-            mainLayerTransform3 =  CATransform3DTranslate(mainLayerTransform3,0, 0, height/2.0)
-            
-            mainLayerTransform4 =  CATransform3DTranslate(mainLayerTransform4,0, 0, -height/2.0)
-            mainLayerTransform4 = CATransform3DRotate(mainLayerTransform4,CGFloat(angle), 1, 0, 0)
-            mainLayerTransform4 =  CATransform3DTranslate(mainLayerTransform4,0, 0, height/2.0)
+            mainLayerTransform =  CATransform3DTranslate(mainLayerTransform,0, 0, -height/2.0)
+            mainLayerTransform = CATransform3DRotate(mainLayerTransform,CGFloat(angle), 1, 0, 0)
+            mainLayerTransform =  CATransform3DTranslate(mainLayerTransform,0, 0, height/2.0)
             
         default:
             
             let width = toViewFrame.width
             
             toContentLayerTransform1 =  CATransform3DTranslate(toContentLayerTransform1,0, 0, -width/2.0)
-            toContentLayerTransform1 = CATransform3DRotate(toContentLayerTransform1,CGFloat(angle), 0, 1, 0)
+            toContentLayerTransform1 = CATransform3DRotate(toContentLayerTransform1,CGFloat(-angle), 0, 1, 0)
             toContentLayerTransform1 =  CATransform3DTranslate(toContentLayerTransform1,0, 0, width/2.0)
             toContentLayerTransform2 =  CATransform3DTranslate(toContentLayerTransform2,0, 0, -width/2.0)
-            toContentLayerTransform2 = CATransform3DRotate(toContentLayerTransform2,CGFloat(-angle), 0, 1, 0)
+            toContentLayerTransform2 = CATransform3DRotate(toContentLayerTransform2,CGFloat(angle), 0, 1, 0)
             toContentLayerTransform2 =  CATransform3DTranslate(toContentLayerTransform2,0, 0, width/2.0)
-            
-            mainLayerTransform1 =  CATransform3DTranslate(mainLayerTransform1,0, 0, -width/2.0)
-            mainLayerTransform1 = CATransform3DRotate(mainLayerTransform1,CGFloat(angle - 0.08), 0, 1, 0)
-            mainLayerTransform1 =  CATransform3DTranslate(mainLayerTransform1,0, 0, width/2.0)
-            
-            mainLayerTransform2 =  CATransform3DTranslate(mainLayerTransform2,0, 0, -width/2.0)
-            mainLayerTransform2 = CATransform3DRotate(mainLayerTransform2,CGFloat(angle - 0.04), 0, 1, 0)
-            mainLayerTransform2 =  CATransform3DTranslate(mainLayerTransform2,0, 0, width/2.0)
-            
-            mainLayerTransform3 =  CATransform3DTranslate(mainLayerTransform3,0, 0, -width/2.0)
-            mainLayerTransform3 = CATransform3DRotate(mainLayerTransform3,CGFloat(angle + 0.05), 0, 1, 0)
-            mainLayerTransform3 =  CATransform3DTranslate(mainLayerTransform3,0, 0, width/2.0)
-            
-            mainLayerTransform4 =  CATransform3DTranslate(mainLayerTransform4,0, 0, -width/2.0)
-            mainLayerTransform4 = CATransform3DRotate(mainLayerTransform4,CGFloat(angle), 0, 1, 0)
-            mainLayerTransform4 =  CATransform3DTranslate(mainLayerTransform4,0, 0, width/2.0)
+            mainLayerTransform =  CATransform3DTranslate(mainLayerTransform,0, 0, -width/2.0)
+            mainLayerTransform = CATransform3DRotate(mainLayerTransform,CGFloat(angle), 0, 1, 0)
+            mainLayerTransform =  CATransform3DTranslate(mainLayerTransform,0, 0, width/2.0)
             
             
         }
@@ -240,15 +168,14 @@ class MTCubeTransition2: MTLayerTransitionAnimator {
         layer.addSublayer(fromContentLayer)
         transitionContainer.addSubview(cubeView)
         
-        let positionAnimation = CAKeyframeAnimation.init(keyPath: "sublayerTransform")
+        let positionAnimation = CABasicAnimation.init(keyPath: "sublayerTransform")
         positionAnimation.beginTime = 0.0;
         positionAnimation.duration = self.duration;
-        positionAnimation.isCumulative = true
-        positionAnimation.keyTimes = [0.0,0.4,0.6,0.8,0.95,1.0]
-        positionAnimation.values = [NSValue.init(caTransform3D: CATransform3DIdentity),NSValue.init(caTransform3D: mainLayerTransform3), NSValue.init(caTransform3D: mainLayerTransform1),NSValue.init(caTransform3D: mainLayerTransform4), NSValue.init(caTransform3D: mainLayerTransform2), NSValue.init(caTransform3D: mainLayerTransform4)]
-        layer.sublayerTransform = mainLayerTransform4
+        positionAnimation.fromValue = layer.transform
+        positionAnimation.toValue = mainLayerTransform
+        layer.sublayerTransform = mainLayerTransform
         
-        let animator: MTLayerPropertyAnimator = MTLayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
+        let animator: LayerPropertyAnimator = LayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
             
             transitionContainer.backgroundColor = self.backgroundColor
             layer.add(positionAnimation, forKey: nil)
@@ -285,4 +212,3 @@ class MTCubeTransition2: MTLayerTransitionAnimator {
     }
     
 }
-

@@ -15,16 +15,16 @@
 
 import UIKit
 
-let MTTabBarControllerTransitionDelegateAssociationKey = "MTTabBarControllerTransitionDelegateAssociationKey"
+let TabBarControllerTransitionDelegateAssociationKey = "TabBarControllerTransitionDelegateAssociationKey"
 
-public class MTTabBarControllerDelegate: NSObject {
+public class TabBarControllerDelegate: NSObject {
     
     /**
      TabBar view controller.
      */
     @IBOutlet public weak var tabBarController:UITabBarController? {
         didSet {
-            objc_setAssociatedObject(tabBarController, UnsafeRawPointer.init(MTTabBarControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(tabBarController, UnsafeRawPointer.init(TabBarControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             tabBarController?.delegate = self
             
             if isInteractive {
@@ -38,10 +38,10 @@ public class MTTabBarControllerDelegate: NSObject {
      */
     @IBInspectable public var type: UInt = 0 {
         willSet(newType) {
-            if newType < UInt(MTTransitionType.Max.rawValue) {
-                transitionType = MTTransitionType(rawValue: Int(newType))!
+            if newType < UInt(TransitionType.Max.rawValue) {
+                transitionType = TransitionType(rawValue: Int(newType))!
             } else {
-                transitionType = MTTransitionType.Push2
+                transitionType = TransitionType.Push2
             }
         }
     }
@@ -51,10 +51,10 @@ public class MTTabBarControllerDelegate: NSObject {
      */
     @IBInspectable public var subType: UInt = 0 {
         willSet(newSubType) {
-            if newSubType < UInt(MTTransitionSubType.None.rawValue) {
-                transitionSubType = MTTransitionSubType(rawValue: Int(newSubType))!
+            if newSubType < UInt(TransitionSubType.None.rawValue) {
+                transitionSubType = TransitionSubType(rawValue: Int(newSubType))!
             } else {
-                transitionSubType = MTTransitionSubType.RightToLeft
+                transitionSubType = TransitionSubType.RightToLeft
             }
         }
     }
@@ -79,9 +79,9 @@ public class MTTabBarControllerDelegate: NSObject {
         }
     }
     
-    public var transitionType: MTTransitionType = .Push2
-    var oppsiteSubType: MTTransitionSubType = .LeftToRight
-    public var transitionSubType:MTTransitionSubType = .RightToLeft {
+    public var transitionType: TransitionType = .Push2
+    var oppsiteSubType: TransitionSubType = .LeftToRight
+    public var transitionSubType:TransitionSubType = .RightToLeft {
         willSet(newTransitionSubType) {
             oppsiteSubType = oppsiteTransition(subType: newTransitionSubType)
         }
@@ -89,19 +89,19 @@ public class MTTabBarControllerDelegate: NSObject {
     
     public var transitionBackgroundColor: UIColor = UIColor.black    
     fileprivate var panGestureRecognizer: UIPanGestureRecognizer?
-    fileprivate var gestureDirection: MTGestureDirection = .LeftToRight
+    fileprivate var gestureDirection: GestureDirection = .LeftToRight
     
     public override init() {
         super.init()
     }
     
-    public init(tabBarController: UITabBarController, transitionType: MTTransitionType, isInteractive: Bool) {
+    public init(tabBarController: UITabBarController, transitionType: TransitionType, isInteractive: Bool) {
         self.tabBarController = tabBarController
         self.transitionType = transitionType
         self.isInteractive = isInteractive
         super.init()
         tabBarController.delegate = self
-        objc_setAssociatedObject(tabBarController, UnsafeRawPointer.init(MTTabBarControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(tabBarController, UnsafeRawPointer.init(TabBarControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
         if isInteractive {
             configurePanGestureRecognizer()
@@ -113,7 +113,7 @@ public class MTTabBarControllerDelegate: NSObject {
         NSLog(" tabBar delegate has been deinit ")
     }
     
-    func configurePanGestureRecognizer() {
+    private func configurePanGestureRecognizer() {
         panGestureRecognizer = UIPanGestureRecognizer()
         panGestureRecognizer?.delegate = self
         panGestureRecognizer?.maximumNumberOfTouches = 1
@@ -122,11 +122,11 @@ public class MTTabBarControllerDelegate: NSObject {
         
     }
     
-    func removeGestureRecognizer() {
+    private func removeGestureRecognizer() {
         //
     }
     
-    func panGestureRecognizerDidPan(_ gesture: UIPanGestureRecognizer) {
+    @objc private func panGestureRecognizerDidPan(_ gesture: UIPanGestureRecognizer) {
         
         if ((tabBarController?.transitionCoordinator) != nil) {
             return
@@ -137,7 +137,7 @@ public class MTTabBarControllerDelegate: NSObject {
         }
     }
     
-    func beginInteractiveTransitionIfPossible(gesture: UIPanGestureRecognizer) {
+    private func beginInteractiveTransitionIfPossible(gesture: UIPanGestureRecognizer) {
         
         let translation: CGPoint = gesture.translation(in: tabBarController!.view)
         if translation.x > 0.0 && (tabBarController?.selectedIndex)! > 0 {
@@ -160,7 +160,7 @@ public class MTTabBarControllerDelegate: NSObject {
         
     }
     
-    func oppsiteTransition(subType: MTTransitionSubType) -> MTTransitionSubType {
+    fileprivate func oppsiteTransition(subType: TransitionSubType) -> TransitionSubType {
         switch (subType) {
         case .LeftToRight:
             return .RightToLeft
@@ -179,7 +179,7 @@ public class MTTabBarControllerDelegate: NSObject {
     
 }
 
-extension MTTabBarControllerDelegate : UIGestureRecognizerDelegate {
+extension TabBarControllerDelegate : UIGestureRecognizerDelegate {
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
@@ -187,7 +187,7 @@ extension MTTabBarControllerDelegate : UIGestureRecognizerDelegate {
     
 }
 
-extension MTTabBarControllerDelegate : UITabBarControllerDelegate {
+extension TabBarControllerDelegate : UITabBarControllerDelegate {
     
     public func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         var subType = transitionSubType
@@ -195,7 +195,7 @@ extension MTTabBarControllerDelegate : UITabBarControllerDelegate {
         if (controllers?.index(of: toVC))! < (controllers?.index(of: fromVC))! {
             subType = oppsiteSubType
         }
-        return MTAnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: subType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
+        return AnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: subType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)
         
     }
     
@@ -204,7 +204,7 @@ extension MTTabBarControllerDelegate : UITabBarControllerDelegate {
             return nil
         }
         
-        let animatedInteractiveTransitioning = animationController as! MTAnimatedInteractiveTransitioning
+        let animatedInteractiveTransitioning = animationController as! AnimatedInteractiveTransitioning
         animatedInteractiveTransitioning.gestureDirection = gestureDirection
         animatedInteractiveTransitioning.panGestureRecognizer = panGestureRecognizer
         

@@ -1,5 +1,5 @@
 //
-//  MTBlindsTransition2.swift
+//  MTBlindsTransition1.swift
 //  Pods
 //
 //  Created by Frgallah on 4/11/17.
@@ -25,7 +25,7 @@
 
 import UIKit
 
-class MTBlindsTransition2: MTLayerTransitionAnimator {
+class BlindsTransition1: LayerTransitionAnimator {
     
     override func setupTranisition(containerView: UIView, fromView: UIView, toView: UIView, fromViewFrame:CGRect, toViewFrame:CGRect) {
         
@@ -34,6 +34,7 @@ class MTBlindsTransition2: MTLayerTransitionAnimator {
         fromView.frame = fromViewFrame
         toView.frame = toViewFrame
         containerView.addSubview(toView)
+        
         
         let transitionView = UIView.init(frame: containerView.bounds)
         transitionView.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
@@ -59,46 +60,46 @@ class MTBlindsTransition2: MTLayerTransitionAnimator {
         switch transitionSubType {
         case .LeftToRight:
             
-            fromLayerWidth = fromViewWidth
-            fromLayerHeight = fromViewHeight / count
-            fromLayerX = 0
-            fromLayerY = fromLayerHeight
+            fromLayerWidth = fromViewWidth / count
+            fromLayerHeight = fromViewHeight
+            fromLayerX = fromLayerWidth
+            fromLayerY = 0
             xDistance = toView.frame.width
             yDistance = 0
             
         case .RightToLeft:
             
-            fromLayerWidth = fromViewWidth
-            fromLayerHeight = fromViewHeight / count
-            fromLayerX = 0
-            fromLayerY = fromLayerHeight
+            fromLayerWidth = fromViewWidth / count
+            fromLayerHeight = fromViewHeight
+            fromLayerX = fromLayerWidth
+            fromLayerY = 0
             xDistance = -(toView.frame.width)
             yDistance = 0
             
         case .TopToBottom:
             
-            fromLayerWidth = fromViewWidth / count
-            fromLayerHeight = fromViewHeight
-            fromLayerX = fromLayerWidth
-            fromLayerY = 0
+            fromLayerWidth = fromViewWidth
+            fromLayerHeight = fromViewHeight / count
+            fromLayerX = 0
+            fromLayerY = fromLayerHeight
             xDistance = 0
             yDistance = toView.frame.height
             
         case .BottomToTop:
             
-            fromLayerWidth = fromViewWidth / count
-            fromLayerHeight = fromViewHeight
-            fromLayerX = fromLayerWidth
-            fromLayerY = 0
+            fromLayerWidth = fromViewWidth
+            fromLayerHeight = fromViewHeight / count
+            fromLayerX = 0
+            fromLayerY = fromLayerHeight
             xDistance = 0
             yDistance = -(toView.frame.height)
             
         default:
             
-            fromLayerWidth = fromViewWidth
-            fromLayerHeight = fromViewHeight / count
-            fromLayerX = 0
-            fromLayerY = fromLayerHeight
+            fromLayerWidth = fromViewWidth / count
+            fromLayerHeight = fromViewHeight
+            fromLayerX = fromLayerWidth
+            fromLayerY = 0
             xDistance = toView.frame.width
             yDistance = 0
             
@@ -188,7 +189,7 @@ class MTBlindsTransition2: MTLayerTransitionAnimator {
         positionAnimation.toValue = position1
         toLayer.position = position1
         
-        let animator: MTLayerPropertyAnimator = MTLayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
+        let animator: LayerPropertyAnimator = LayerPropertyAnimator.init(duration: duration, curve: .linear, animations: { [unowned self] in
             
             transitionView.backgroundColor = self.backgroundColor
             toLayer.add(positionAnimation, forKey: nil)
@@ -211,7 +212,6 @@ class MTBlindsTransition2: MTLayerTransitionAnimator {
             }
             
         })
-        
         animator.animationUpdated = ({
             
             toLayer.position = position2
@@ -221,8 +221,8 @@ class MTBlindsTransition2: MTLayerTransitionAnimator {
         })
         
         animator.isUserInteractionEnabled = false
-        self.propertyAnimator = animator
         animator.mainlayer = mainLayer
+        self.propertyAnimator = animator
         
         if self.isInteractive {
             animator.startInteractiveAnimation()
