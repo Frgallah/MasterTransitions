@@ -41,7 +41,7 @@ class CubeTransition1: LayerTransitionAnimator {
         var t = CATransform3DIdentity
         t.m34 = 1 / -900
         
-        let angle = M_PI_2
+        let angle = Double.pi / 2
         var mainLayerTransform = t
         var toContentLayerTransform1 = CATransform3DIdentity
         var toContentLayerTransform2 = CATransform3DIdentity

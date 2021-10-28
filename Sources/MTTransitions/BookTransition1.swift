@@ -120,8 +120,8 @@ class BookTransition1: LayerTransitionAnimator {
         mainLayer.addSublayer(frontLayer1)
         mainLayer.addSublayer(frontLayer2)
         
-        var angle = M_PI
-        var valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateY)
+        var angle = Double.pi
+        var valueFunction = CAValueFunction.init(name: CAValueFunctionName.rotateY)
         let width = fromLayerFrame.width
         let height = fromLayerFrame.height
         var frontLayerTransform = CATransform3DIdentity
@@ -136,8 +136,8 @@ class BookTransition1: LayerTransitionAnimator {
             fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
             toLayer2.frame = CGRect(x: 0, y: 0, width: width, height: height)
             
-            angle = M_PI
-            valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateY)
+            angle = Double.pi
+            valueFunction = CAValueFunction.init(name: CAValueFunctionName.rotateY)
             frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
             frontLayer1.zPosition = 1
             frontLayer1.addSublayer(toLayer2)
@@ -154,8 +154,8 @@ class BookTransition1: LayerTransitionAnimator {
             fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
             toLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
             
-            angle = -M_PI
-            valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateY)
+            angle = -Double.pi
+            valueFunction = CAValueFunction.init(name: CAValueFunctionName.rotateY)
             frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
             frontLayer2.addSublayer(toLayer2)
             frontLayer2.zPosition = 1
@@ -172,8 +172,8 @@ class BookTransition1: LayerTransitionAnimator {
             fromLayer2.frame = CGRect(x: 0, y: -halfHeight, width: width, height: height)
             toLayer2.frame = CGRect(x: 0, y: 0, width: width, height: height)
             
-            angle = -M_PI
-            valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateX)
+            angle = -Double.pi
+            valueFunction = CAValueFunction.init(name: CAValueFunctionName.rotateX)
             frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 1, 0, 0)
             frontLayer1.addSublayer(toLayer2)
             frontLayer1.zPosition = 1
@@ -190,8 +190,8 @@ class BookTransition1: LayerTransitionAnimator {
             fromLayer2.frame = CGRect(x: 0, y: -halfHeight, width: width, height: height)
             toLayer2.frame = CGRect(x: 0, y: -halfHeight, width: width, height: height)
             
-            angle = M_PI
-            valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateX)
+            angle = Double.pi
+            valueFunction = CAValueFunction.init(name: CAValueFunctionName.rotateX)
             frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 1, 0, 0)
             frontLayer2.addSublayer(toLayer2)
             frontLayer2.zPosition = 1
@@ -208,8 +208,8 @@ class BookTransition1: LayerTransitionAnimator {
             fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
             toLayer2.frame = CGRect(x: 0, y: 0, width: width, height: height)
             
-            angle = M_PI
-            valueFunction = CAValueFunction.init(name: kCAValueFunctionRotateY)
+            angle = Double.pi
+            valueFunction = CAValueFunction.init(name: CAValueFunctionName.rotateY)
             frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
             frontLayer1.addSublayer(toLayer2)
             frontLayer1.zPosition = 1

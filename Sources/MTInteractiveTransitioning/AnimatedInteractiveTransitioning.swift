@@ -16,11 +16,11 @@
 import UIKit
 
 enum GestureDirection: Int {
-    case Default
     case LeftToRight
     case RightToLeft
     case TopToBottom
     case BottomToTop
+    case none
 }
 
 
@@ -74,7 +74,7 @@ class AnimatedInteractiveTransitioning: NSObject {
         NSLog(" AnimatedInteractiveTransitioning has been deinit ")
     }
     
-    func updateInteractionFor(gesture: UIPanGestureRecognizer)
+    @objc func updateInteractionFor(gesture: UIPanGestureRecognizer)
     {
         switch gesture.state {
         case .began: break

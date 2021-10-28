@@ -54,39 +54,39 @@ class SwingDoorTransition: LayerTransitionAnimator {
         var anchorPoint2 = CGPoint.zero;
         var transform1 = t
         var transform2 = t
-        var angle = M_PI_2
+        var angle = Double.pi / 2
         
         switch transitionSubType {
         case .LeftToRight:
             anchorPoint1 = CGPoint.init(x: 0, y: 0.5)
             anchorPoint2 = CGPoint.init(x: 1, y: 0.5)
-            angle = M_PI_2
+            angle = Double.pi / 2
             transform1 = CATransform3DRotate(transform1,CGFloat(angle), 0, 1, 0)
             transform2 = CATransform3DRotate(transform2,CGFloat(-angle), 0, 1, 0)
             
         case .RightToLeft:
             anchorPoint1 = CGPoint.init(x: 1, y: 0.5)
             anchorPoint2 = CGPoint.init(x: 0, y: 0.5)
-            angle = -M_PI_2
+            angle = -Double.pi / 2
             transform1 = CATransform3DRotate(transform1,CGFloat(angle), 0, 1, 0)
             transform2 = CATransform3DRotate(transform2,CGFloat(-angle), 0, 1, 0)
             
         case .TopToBottom:
             anchorPoint1 = CGPoint.init(x: 0.5, y: 1)
             anchorPoint2 = CGPoint.init(x: 0.5, y: 0)
-            angle = M_PI_2
+            angle = Double.pi / 2
             transform1 = CATransform3DRotate(fromLayer.transform,CGFloat(angle), 1, 0, 0)
             transform2 = CATransform3DRotate(toLayer.transform,CGFloat(-angle), 1, 0, 0)
         case .BottomToTop:
             anchorPoint1 = CGPoint.init(x: 0.5, y: 0)
             anchorPoint2 = CGPoint.init(x: 0.5, y: 1)
-            angle = -M_PI_2
+            angle = -Double.pi / 2
             transform1 = CATransform3DRotate(fromLayer.transform,CGFloat(angle), 1, 0, 0)
             transform2 = CATransform3DRotate(toLayer.transform,CGFloat(-angle), 1, 0, 0)
         default:
             anchorPoint1 = CGPoint.init(x: 0, y: 0.5)
             anchorPoint2 = CGPoint.init(x: 1, y: 0.5)
-            angle = M_PI_2
+            angle = Double.pi / 2
             transform1 = CATransform3DRotate(transform1,CGFloat(angle), 0, 1, 0)
             transform2 = CATransform3DRotate(transform2,CGFloat(-angle), 0, 1, 0)
         }

@@ -15,7 +15,7 @@
 
 import UIKit
 
-let ModalControllerTransitionDelegateAssociationKey = "ModalControllerTransitionDelegateAssociationKey"
+var ModalControllerTransitionDelegateAssociationKey = "ModalControllerTransitionDelegateAssociationKey"
 
 public class ModalControllerDelegate: NSObject {
 
@@ -47,7 +47,7 @@ public class ModalControllerDelegate: NSObject {
      */
     @IBOutlet public weak var destinationController:UIViewController? {
         didSet {
-            objc_setAssociatedObject(destinationController, UnsafeRawPointer.init(ModalControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(destinationController as Any, &ModalControllerTransitionDelegateAssociationKey, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             destinationController?.transitioningDelegate = self
             
         }
@@ -84,8 +84,13 @@ public class ModalControllerDelegate: NSObject {
     /**
      Gesture dismissal direction (enum), default value is set to direction left to right.
      */
-    @IBInspectable var gestureDismissalDirection:GestureDirection = .LeftToRight
+    @IBInspectable var gestureDismissalDirectionInt: UInt = 0 {
+        didSet {
+            gestureDismissalDirection = GestureDirection(rawValue: Int(gestureDismissalDirectionInt)) ?? .LeftToRight
+        }
+    }
     
+    var gestureDismissalDirection: GestureDirection = .LeftToRight
     
     /**
      Transition duration (in seconds), default value is set to 2 seconds.
@@ -116,7 +121,7 @@ public class ModalControllerDelegate: NSObject {
         super.init()
         destinationController.transitioningDelegate = self
         destinationController.modalPresentationStyle = .fullScreen
-        objc_setAssociatedObject(destinationController, UnsafeRawPointer.init(ModalControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(destinationController, &ModalControllerTransitionDelegateAssociationKey, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
     }
     

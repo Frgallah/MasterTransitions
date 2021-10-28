@@ -15,7 +15,7 @@
 
 import UIKit
 
-let TabBarControllerTransitionDelegateAssociationKey = "TabBarControllerTransitionDelegateAssociationKey"
+var TabBarControllerTransitionDelegateAssociationKey = "TabBarControllerTransitionDelegateAssociationKey"
 
 public class TabBarControllerDelegate: NSObject {
     
@@ -24,7 +24,7 @@ public class TabBarControllerDelegate: NSObject {
      */
     @IBOutlet public weak var tabBarController:UITabBarController? {
         didSet {
-            objc_setAssociatedObject(tabBarController, UnsafeRawPointer.init(TabBarControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(tabBarController as Any, &TabBarControllerTransitionDelegateAssociationKey, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             tabBarController?.delegate = self
             
             if isInteractive {
@@ -101,7 +101,7 @@ public class TabBarControllerDelegate: NSObject {
         self.isInteractive = isInteractive
         super.init()
         tabBarController.delegate = self
-        objc_setAssociatedObject(tabBarController, UnsafeRawPointer.init(TabBarControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(tabBarController, &TabBarControllerTransitionDelegateAssociationKey, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
         if isInteractive {
             configurePanGestureRecognizer()
@@ -192,7 +192,7 @@ extension TabBarControllerDelegate : UITabBarControllerDelegate {
     public func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         var subType = transitionSubType
         let controllers = tabBarController.viewControllers
-        if (controllers?.index(of: toVC))! < (controllers?.index(of: fromVC))! {
+        if (controllers?.firstIndex(of: toVC))! < (controllers?.firstIndex(of: fromVC))! {
             subType = oppsiteSubType
         }
         return AnimatedInteractiveTransitioning.init(transitionType: transitionType, transitionSubType: subType, duration: duration, panGestureRecognizer: nil, gestureDirection: nil, backgroundColor: transitionBackgroundColor)

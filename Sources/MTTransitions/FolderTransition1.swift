@@ -112,8 +112,8 @@ class FolderTransition1: LayerTransitionAnimator {
         
         var anchorPoint1 = CGPoint.zero;
         var anchorPoint2 = CGPoint.zero;
-        var angle1 = -M_PI_2
-        var angle2 = M_PI_2
+        var angle1 = -Double.pi / 2
+        var angle2 = Double.pi / 2
         let width = fromLayerFrame.width
         let height = fromLayerFrame.height
         var frontLayerTransform1 = CATransform3DIdentity
@@ -128,8 +128,8 @@ class FolderTransition1: LayerTransitionAnimator {
             fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
             anchorPoint1 = CGPoint.init(x: 1, y: 0.5)
             anchorPoint2 = CGPoint.init(x: 0, y: 0.5)
-            angle1 = M_PI_2
-            angle2 = -M_PI_2
+            angle1 = Double.pi / 2
+            angle2 = -Double.pi / 2
             frontLayerTransform1 = CATransform3DMakeRotation(CGFloat(angle1), 0, 1, 0)
             frontLayerTransform2 = CATransform3DMakeRotation(CGFloat(angle2), 0, 1, 0)
             
@@ -141,8 +141,8 @@ class FolderTransition1: LayerTransitionAnimator {
             fromLayer2.frame = CGRect(x: 0, y: -halfHeight, width: width, height: height)
             anchorPoint1 = CGPoint.init(x: 0.5, y: 1)
             anchorPoint2 = CGPoint.init(x: 0.5, y: 0)
-            angle1 = -M_PI_2
-            angle2 = M_PI_2
+            angle1 = -Double.pi / 2
+            angle2 = Double.pi / 2
             frontLayerTransform1 = CATransform3DMakeRotation(CGFloat(angle1), 1, 0, 0)
             frontLayerTransform2 = CATransform3DMakeRotation(CGFloat(angle2), 1, 0, 0)
             
@@ -154,8 +154,8 @@ class FolderTransition1: LayerTransitionAnimator {
             fromLayer2.frame = CGRect(x: -halfWidth, y: 0, width: width, height: height)
             anchorPoint1 = CGPoint.init(x: 1, y: 0.5)
             anchorPoint2 = CGPoint.init(x: 0, y: 0.5)
-            angle1 = M_PI_2
-            angle2 = -M_PI_2
+            angle1 = Double.pi / 2
+            angle2 = -Double.pi / 2
             frontLayerTransform1 = CATransform3DMakeRotation(CGFloat(angle1), 0, 1, 0)
             frontLayerTransform2 = CATransform3DMakeRotation(CGFloat(angle2), 0, 1, 0)
             

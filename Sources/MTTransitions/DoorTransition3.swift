@@ -114,7 +114,7 @@ class DoorTransition3: LayerTransitionAnimator {
         
         var anchorPoint1 = CGPoint.zero;
         var anchorPoint2 = CGPoint.zero;
-        var angle = M_PI_2
+        var angle = Double.pi / 2
         let width = fromLayerFrame.width
         let height = fromLayerFrame.height
         
@@ -130,7 +130,7 @@ class DoorTransition3: LayerTransitionAnimator {
             
             anchorPoint1 = CGPoint.init(x: 1, y: 0.5)
             anchorPoint2 = CGPoint.init(x: 1, y: 0.5)
-            angle = M_PI_2
+            angle = Double.pi / 2
             frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
             
             
@@ -143,7 +143,7 @@ class DoorTransition3: LayerTransitionAnimator {
             
             anchorPoint1 = CGPoint.init(x: 0, y: 0.5)
             anchorPoint2 = CGPoint.init(x: 0, y: 0.5)
-            angle = -M_PI_2
+            angle = -Double.pi / 2
             frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
             
         case .TopToBottom:
@@ -155,7 +155,7 @@ class DoorTransition3: LayerTransitionAnimator {
             
             anchorPoint1 = CGPoint.init(x: 0.5, y: 1)
             anchorPoint2 = CGPoint.init(x: 0.5, y: 1)
-            angle = -M_PI_2
+            angle = -Double.pi / 2
             frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 1, 0, 0)
             
         case .BottomToTop:
@@ -167,7 +167,7 @@ class DoorTransition3: LayerTransitionAnimator {
             
             anchorPoint1 = CGPoint.init(x: 0.5, y: 0)
             anchorPoint2 = CGPoint.init(x: 0.5, y: 0)
-            angle = M_PI_2
+            angle = Double.pi / 2
             frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 1, 0, 0)
             
         default:
@@ -179,7 +179,7 @@ class DoorTransition3: LayerTransitionAnimator {
             
             anchorPoint1 = CGPoint.init(x: 1, y: 0.5)
             anchorPoint2 = CGPoint.init(x: 1, y: 0.5)
-            angle = M_PI_2
+            angle = Double.pi / 2
             frontLayerTransform = CATransform3DMakeRotation(CGFloat(angle), 0, 1, 0)
             
             

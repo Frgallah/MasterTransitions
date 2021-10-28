@@ -14,7 +14,7 @@
 //
 
 
-let NavigationControllerTransitionDelegateAssociationKey = "NavigationControllerTransitionDelegateAssociationKey"
+var NavigationControllerTransitionDelegateAssociationKey = "NavigationControllerTransitionDelegateAssociationKey"
 
 import UIKit
 
@@ -25,7 +25,7 @@ public class NavigationControllerDelegate: NSObject {
      */
     @IBOutlet public weak var navigationController:UINavigationController? {
         didSet {
-            objc_setAssociatedObject(navigationController, UnsafeRawPointer.init(NavigationControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(navigationController as Any, &NavigationControllerTransitionDelegateAssociationKey, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             navigationController?.delegate = self
             
             if isInteractive {
@@ -84,7 +84,13 @@ public class NavigationControllerDelegate: NSObject {
     /**
      Gesture pop direction (enum), default value is set to direction left to right.
      */
-    @IBInspectable var gesturePopDirection:GestureDirection = .LeftToRight
+    @IBInspectable var gesturePopDirectionInt: UInt = 0 {
+        didSet {
+            gesturePopDirection = GestureDirection(rawValue: Int(gesturePopDirectionInt)) ?? .LeftToRight
+        }
+    }
+    
+    var gesturePopDirection: GestureDirection = .LeftToRight
     
     public var transitionType:TransitionType = .Push2
     var oppsiteSubType: TransitionSubType = .LeftToRight
@@ -97,7 +103,7 @@ public class NavigationControllerDelegate: NSObject {
     public var transitionBackgroundColor: UIColor = UIColor.black
     
     fileprivate var panGestureRecognizer: UIPanGestureRecognizer?
-    fileprivate var navigationOperation: UINavigationControllerOperation = .none
+    fileprivate var navigationOperation: UINavigationController.Operation = .none
     
     public override init() {
         super.init()
@@ -110,7 +116,7 @@ public class NavigationControllerDelegate: NSObject {
         self.navigationController = navigationController
         super.init()
         navigationController.delegate = self
-        objc_setAssociatedObject(self.navigationController, UnsafeRawPointer.init(NavigationControllerTransitionDelegateAssociationKey), self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self.navigationController as Any, &NavigationControllerTransitionDelegateAssociationKey, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         
         if isInteractive {
             configurePanGestureRecognizer()
@@ -256,7 +262,7 @@ extension NavigationControllerDelegate : UIGestureRecognizerDelegate {
 
 extension NavigationControllerDelegate : UINavigationControllerDelegate {
     
-    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         var subType = transitionSubType
         if operation == .pop {
