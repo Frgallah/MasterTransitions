@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import Pods_MasterTransitions_Tests
+
 
 
 class Tests: XCTestCase {

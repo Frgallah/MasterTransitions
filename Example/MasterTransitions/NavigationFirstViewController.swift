@@ -31,7 +31,7 @@ class NavigationFirstViewController: UIViewController {
             return
         }
         let navigationControllerDelegate = NavigationControllerDelegate.init(navigationController: navigationController, transitionType: transitionType, isInteractive: true)
-        navigationControllerDelegate.duration = 1.4
+        navigationControllerDelegate.duration = 0.6
         navigationControllerDelegate.transitionSubType = .RightToLeft
         navigationControllerDelegate.transitionBackgroundColor = .black
         

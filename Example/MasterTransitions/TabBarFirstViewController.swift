@@ -32,7 +32,7 @@ class TabBarFirstViewController: UIViewController {
         }
         
         let tabBarControllerDelegate = TabBarControllerDelegate.init(tabBarController: tabBarController, transitionType: transitionType, isInteractive: true)
-        tabBarControllerDelegate.duration = 2
+        tabBarControllerDelegate.duration = 0.6
         tabBarControllerDelegate.transitionSubType = .LeftToRight
         tabBarControllerDelegate.transitionBackgroundColor = .black
    

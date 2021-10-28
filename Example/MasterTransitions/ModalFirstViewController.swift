@@ -49,7 +49,7 @@ class ModalFirstViewController: UIViewController {
             destinationController.modalPresentationStyle = .fullScreen
             let controllerDelegate = ModalControllerDelegate.init(destinationController: destinationController, transitionType: transitionType)
             controllerDelegate.addInteractiveToDestinationController(panGesture: nil)
-            controllerDelegate.duration = 2
+            controllerDelegate.duration = 0.6
             controllerDelegate.transitionSubType = .RightToLeft
             controllerDelegate.transitionBackgroundColor = .black
         
